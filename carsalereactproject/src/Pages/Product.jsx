@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Link, useParams, useNavigate } from "reac
 import { useForm } from "react-hook-form";
 //import reactLogo from './react.svg';
 import viteLogo from '/vite.svg';
-import logo from '/logo.png';
+//import logo from '/logo.png';
 import './Product.css';
 //import '../App.css'
 //import Navigation from './Navigation.jsx'
