@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "carsalereactproject", "CarSaleReactProject\carsalereactproject.esproj", "{D02B5452-1724-88EF-41ED-A771ADB9615E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{564E895E-EAFB-4B6E-A9C4-43913DC69F7E} = {564E895E-EAFB-4B6E-A9C4-43913DC69F7E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionApp1", "FunctionApp1\FunctionApp1.csproj", "{564E895E-EAFB-4B6E-A9C4-43913DC69F7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D02B5452-1724-88EF-41ED-A771ADB9615E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D02B5452-1724-88EF-41ED-A771ADB9615E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D02B5452-1724-88EF-41ED-A771ADB9615E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D02B5452-1724-88EF-41ED-A771ADB9615E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D02B5452-1724-88EF-41ED-A771ADB9615E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D02B5452-1724-88EF-41ED-A771ADB9615E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{564E895E-EAFB-4B6E-A9C4-43913DC69F7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{564E895E-EAFB-4B6E-A9C4-43913DC69F7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{564E895E-EAFB-4B6E-A9C4-43913DC69F7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{564E895E-EAFB-4B6E-A9C4-43913DC69F7E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5ADC2F14-F2FB-47C8-A17E-BF6F9EE606A1}
+	EndGlobalSection
+EndGlobal

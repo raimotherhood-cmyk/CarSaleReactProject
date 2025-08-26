@@ -1,0 +1,115 @@
+.productlist {
+    margin: 8px auto;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.productlistimage img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+.productlistimage {
+    flex-basis: 45%;
+    
+}
+.productlisttext {
+    flex-basis: 41%;
+     
+}
+
+.nav-relative{
+    position:relative;
+     
+}
+.title {
+    margin: 90px 50px 50px 50px;
+    width: 90%;
+    display: block;
+    align-items: flex-end;
+    justify-content: space-between;
+     top: 40px;
+    position: relative;
+}
+
+/*------------media query-----------*/
+
+@media (max-width:850px) {
+
+    .productlist {
+        flex-direction: column;
+    }
+
+    .productlistimage {
+        flex-basis: 100%;
+        margin: 20px;
+    }
+    .productlisttext {
+        flex-basis: 100%;
+        margin: 20px;
+    }
+    .nav-relative ul {
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        display: flex;
+    }
+
+        .nav-relative ul li {
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0;
+            align-items: center;
+            justify-content: center;
+        }
+}
+
+@media (max-width:650px) {
+    .productlist {
+        flex-direction: column;
+    }
+
+    .productlistimage {
+        flex-basis: 100%;
+        margin: 20px;
+    }
+
+    .productlisttext {
+        flex-basis: 100%;
+        margin: 20px;
+    }
+
+    .nav-relative ul {
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        display: flex;
+    }
+        .nav-relative ul li {
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0;
+             align-items:center;
+            justify-content: center;
+        }
+         
+}
+ 
+
+ 
