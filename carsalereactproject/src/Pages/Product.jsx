@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react'
 import { BrowserRouter, Routes, Route, Link, useParams, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 //import reactLogo from './react.svg';
-import viteLogo from '/vite.svg';
+//import viteLogo from '/vite.svg';
 //import logo from '/logo.png';
 import './Product.css';
 //import '../App.css'
