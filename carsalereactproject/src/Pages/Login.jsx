@@ -17,41 +17,48 @@ const Login = ({ login }) => {
         data.preventDefault();
         const formData = new FormData(data.currentTarget);
         const userid = formData.get('userid');
-        const userData = await fetch('http://localhost:7124/api/authenticate', {
-            method: 'POST',
-            body: formData,
+        try {
+            const userData = await fetch('http://localhost:7124/api/authenticate', {
+                method: 'POST',
+                body: formData,
+                contentType: false,
+                processData: false,
 
+            });
 
-        });
+            if (userData.ok) {
+                console.log(userid + " You Are Successfully Logged In");
 
-        if (userData.ok) {
-            console.log(userid + " You Are Successfully Logged In");
+                login(userid);
+                navigate("/productlist");
 
-            login(userid);
-            navigate("/productlist");
-
+            }
+            else {
+                console.log("Email or Password is not matching with our record");
+                seterrormessage("Email or Password is not matching with our record");
+            }
         }
-        else {
-            console.log("Email or Password is not matching with our record");
-            seterrormessage("Email or Password is not matching with our record");
+        catch (error) {
+            console.error('Error login:', error);
+            seterrormessage("Login failed!:" + error);
         }
     };
 
     return (
         <>
             <div className="login">
-            <div className="loginitem">
-                <h2>Login Form</h2>
-            </div>
-           
-            
+                <div className="loginitem">
+                    <h2>Login Form</h2>
+                </div>
+
+
                 <form onSubmit={handleSubmit}>
                     <div className="loginitem">
                         <p>
                             {errormessage}
                         </p>
                     </div>
-                    
+
                     <div className="loginitem">
                         <label> Enter User ID</label>
                         <input
@@ -77,7 +84,7 @@ const Login = ({ login }) => {
                         <h3>Create an account?<Link to="/register" ><a>Register</a></Link> </h3>
                     </div>
                 </form>
-        </div >
+            </div >
         </>
     );
 }
