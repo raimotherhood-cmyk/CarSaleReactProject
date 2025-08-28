@@ -31,10 +31,7 @@ const App = () => {
           <div>
               
               <Navigation />
-              <LocationTracker />
-              {hide && <Home />}
-              {hide && <About />}
-              {hide && <Contact />}
+              
           </div>
 
 

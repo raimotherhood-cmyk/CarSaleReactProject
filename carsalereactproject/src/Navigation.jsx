@@ -132,14 +132,14 @@ function Navigation() {
 
                 <Routes>
 
-                    <Route path="/" element="" />
-                    <Route path="/about" element="" />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
                     <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
                         <Route path="/productlist" element={<ProductList logout={logout} />} />
                         <Route path="/product/:id" element={<Product logout={logout} />} />
                     </Route>
 
-                    <Route path="/contact" element="" />
+                    <Route path="/contact" element={<Contact />} />
                     <Route path="/login" element={<Login login={login} />} />
                     <Route path="/register" element={<Register />} />
 
