@@ -1,10 +1,41 @@
 import { defineConfig } from 'vite';
-import plugin from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react';
+import { ViteSitemap } from 'vite-plugin-sitemap';
+import { createHtmlPlugin } from 'vite-plugin-html';
+import { viteSSG } from 'vite-ssg/serialized-data';
 
-// https://vitejs.dev/config/
+const routes = [
+    { path: '/', name: 'Home' },
+    { path: '/about', name: 'About' },
+    { path: '/contact', name: 'Contact' },
+];
+
 export default defineConfig({
-    plugins: [plugin()],
-    server: {
-        port: 50984,
-    }
-})
+    plugins: [
+        react(),
+        viteSSG({ includedRoutes: () => routes }),
+        ViteSitemap({
+            baseUrl: 'https://happy-rock-0d9f35100.2.azurestaticapps.net/',
+            routes,
+            generateRobotsTxt: true,
+        }),
+        createHtmlPlugin({
+            minify: true,
+            inject: {
+                data: {
+                    title: 'Default Title',
+                    description: 'Default Description',
+                },
+            },
+        }),
+    ],
+    build: {
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    react: ['react', 'react-dom', 'react-router-dom'],
+                },
+            },
+        },
+    },
+});

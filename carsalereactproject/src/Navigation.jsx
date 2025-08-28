@@ -15,7 +15,7 @@ import PrivateRoute from './Pages/PrivateRoute.jsx';
 import logo from '../src/assets/11.jpg';
 import menuicon from '../src/assets/menuicon.jpg';
 import { useIdleTimer } from 'react-idle-timer';
-
+import LocationTracker from './LocationTracker.jsx';
 function Navigation() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [user, setUser] = useState(null);
@@ -101,51 +101,52 @@ function Navigation() {
     const toggleMenu = () => {
         mobilemenu ? setMobilemenu(false) : setMobilemenu(true);
 
-        }
+    }
     return (
         <>
+
             <div>
 
-                <BrowserRouter>
+                <nav className="container  dark-nav">
 
-                    <nav className="container  dark-nav">
+                    <img src={logo} alt="" className="logoclass" ></img>
+                    <h3>Your geo location:<LocationTracker /></h3>
 
-                        <img src={logo} alt="" className="logoclass" ></img>
-                         
-                        {user && <h3>Welcome {user} ! 
-                            <button  className="btn" onClick={handleLogout}>
-                                Logout {formatTime(remainingTime)} 
-                            </button> </h3>}
-
-                        <ul className={mobilemenu ? '' :'hide-mobile-menu'}>
-                            {menuItems.map(item => (
-                                <li key={item.id}>
-                                    <Link to={item.path}>{item.label}</Link>
-                                </li>
-                            ))}
-                        </ul>
-                        <img src={menuicon} alt="" className="menu-icon" onClick={toggleMenu }></img>
-                    </nav>
+                    {user && <h3>Welcome {user} !
+                        <button className="btn" onClick={handleLogout}>
+                            Logout {formatTime(remainingTime)}
+                        </button> </h3>}
 
 
-
-                    <Routes>
-
-                        <Route path="/" element={<Home />} />
-                        <Route path="/about" element={<About />} />
-                        <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
-                            <Route path="/productlist" element={<ProductList logout={logout} />} />
-                            <Route path="/product/:id" element={<Product logout={logout} />} />
-                        </Route>
-
-                        <Route path="/contact" element={<Contact />} />
-                        <Route path="/login" element={<Login login={login} />} />
-                        <Route path="/register" element={<Register />} />
-
-                    </Routes>
+                    <ul className={mobilemenu ? '' : 'hide-mobile-menu'}>
+                        {menuItems.map(item => (
+                            <li key={item.id}>
+                                <Link to={item.path}>{item.label}</Link>
+                            </li>
+                        ))}
+                    </ul>
+                    <img src={menuicon} alt="" className="menu-icon" onClick={toggleMenu}></img>
+                </nav>
 
 
-                </BrowserRouter>
+
+                <Routes>
+
+                    <Route path="/" element="" />
+                    <Route path="/about" element="" />
+                    <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
+                        <Route path="/productlist" element={<ProductList logout={logout} />} />
+                        <Route path="/product/:id" element={<Product logout={logout} />} />
+                    </Route>
+
+                    <Route path="/contact" element="" />
+                    <Route path="/login" element={<Login login={login} />} />
+                    <Route path="/register" element={<Register />} />
+
+                </Routes>
+
+
+
 
 
 
