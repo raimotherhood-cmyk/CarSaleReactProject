@@ -17,6 +17,10 @@ const Login = ({ login }) => {
         data.preventDefault();
         const formData = new FormData(data.currentTarget);
         const userid = formData.get('userid');
+        // temporary code 
+        login(userid);
+        navigate("/productlist");
+
         try {
             const userData = await fetch('http://localhost:7124/api/authenticate', {
                 method: 'POST',
