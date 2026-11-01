@@ -15,7 +15,12 @@ export const contactDetails = {
 };
 
 export const advertisingServices = content.services.map(service => ({ ...service, icon: icons[service.icon] }));
-export const mediaAssets = Object.fromEntries(Object.entries(assetManifest.images).map(([key, image]) => [key, { ...image, src: `/Assets/${image.file}` }]));
-export const mediaFormats = content.mediaFormats.map(format => ({ ...format, image: mediaAssets[format.asset] }));
+const placeholderAssets = Object.fromEntries(Object.entries(assetManifest.placeholders || {}).map(([key, image]) => [key, { ...image, isPlaceholder: true }]));
+export const mediaAssets = Object.fromEntries(Object.entries({ ...placeholderAssets, ...assetManifest.images }).map(([key, image]) => [key, { ...image, src: `/Assets/${image.file}` }]));
+export const mediaFormats = content.mediaFormats.map(format => ({
+    ...format,
+    image: mediaAssets[format.asset || format.id] || null,
+    icon: icons[format.icon] || Presentation,
+}));
 export const placeholderImage = `/Assets/${assetManifest.icons.placeholder}`;
 export const serviceOptions = [content.enquiry.defaultService, ...new Set([...mediaFormats.map(format => format.name), ...advertisingServices.map(service => service.title)])];

@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Check, Eye, MapPin, Target } from "lucide-react";
-import { contactDetails, siteContent } from "../siteContent";
+import { ArrowUpRight, Check, Eye, MapPin, Target, UserRound } from "lucide-react";
+import { contactDetails, mediaAssets, siteContent } from "../siteContent";
 import "./About.css";
 
 const About = () => {
     const { about } = siteContent;
     const { leadership, approach } = about;
+    const portrait = mediaAssets[leadership.portraitAsset];
 
     return (
         <div className="ooh-about">
@@ -22,7 +23,13 @@ const About = () => {
 
             <section className="ooh-leadership" aria-labelledby="leadership-heading">
                 <div className="ooh-shell ooh-leadership-inner">
-                    <div><p className="ooh-eyebrow">{leadership.eyebrow}</p><h2 id="leadership-heading">{leadership.name}</h2><p className="ooh-leadership-role">{leadership.role}</p></div>
+                    <div className="ooh-leadership-identity">
+                        <figure className="ooh-leadership-portrait">
+                            {portrait ? <img src={portrait.src} alt={portrait.alt} width={portrait.width} height={portrait.height} loading="lazy" decoding="async" /> : <UserRound size={76} strokeWidth={1.2} aria-hidden="true" />}
+                            {(!portrait || portrait.isPlaceholder) && <figcaption>{leadership.portraitPlaceholderLabel}</figcaption>}
+                        </figure>
+                        <div><p className="ooh-eyebrow">{leadership.eyebrow}</p><h2 id="leadership-heading">{leadership.name}</h2><p className="ooh-leadership-role">{leadership.role}</p></div>
+                    </div>
                     <div className="ooh-leadership-experience"><ul>{leadership.specialisms.map(specialism => <li key={specialism}><Check size={17} aria-hidden="true" /> {specialism}</li>)}</ul></div>
                     <blockquote className="ooh-leadership-message">
                         {leadership.message.map(paragraph => <p key={paragraph}>{paragraph}</p>)}

@@ -1,26 +1,33 @@
 {
   "license": {
-    "name": "Unsplash License",
-    "url": "https://unsplash.com/license",
-    "verifiedOn": "2026-11-01",
-    "terms": "Commercial and non-commercial use is permitted under the Unsplash License. Do not sell unmodified copies or compile a competing image service. This license does not grant rights to depicted trademarks, people, or artworks.",
-    "notice": "These are illustrative stock photographs, not Vision Advertising client campaigns or owned media inventory."
+    "name": "Original project artwork",
+    "terms": "These illustrations are drawn locally by the project's artwork renderer. No remote photographs or stock-image services are used. The project owner must confirm publication rights for any replacement photographs.",
+    "notice": "Original illustrations are conceptual artwork, not completed client campaigns, owned media inventory, or actual portraits."
   },
   "images": {
-    "hero": { "file": "outdoor-hero.webp", "url": "https://images.unsplash.com/photo-1778406678778-7517492f239f?fm=webp&fit=crop&crop=bottom&w=1920&h=1000&q=82", "source": "https://unsplash.com/photos/times-square-buildings-with-billboards-and-crowds-below-kCFFfdJFh-A", "alt": "Illustrative outdoor advertising displays in Times Square", "width": 1920, "height": 1000 },
-    "heroSmall": { "file": "outdoor-hero-small.webp", "url": "https://images.unsplash.com/photo-1778406678778-7517492f239f?fm=webp&fit=crop&crop=bottom&w=960&h=500&q=82", "source": "https://unsplash.com/photos/times-square-buildings-with-billboards-and-crowds-below-kCFFfdJFh-A", "alt": "Illustrative outdoor advertising displays in Times Square", "width": 960, "height": 500 },
-    "billboards": { "file": "billboards.webp", "url": "https://images.unsplash.com/photo-1778406678778-7517492f239f?fm=webp&fit=crop&crop=bottom&w=900&h=780&q=82", "source": "https://unsplash.com/photos/times-square-buildings-with-billboards-and-crowds-below-kCFFfdJFh-A", "alt": "Billboards and advertising displays in Times Square", "width": 900, "height": 780 },
-    "digital": { "file": "digital-street.webp", "url": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?fm=webp&fit=crop&w=900&h=780&q=82", "source": "https://images.unsplash.com/photo-1519608487953-e999c86e7455", "alt": "Illuminated signs along an urban street at night", "width": 900, "height": 780 },
-    "transit": { "file": "transit-coach.webp", "url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?fm=webp&fit=crop&w=900&h=780&q=82", "source": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957", "alt": "Coach bus parked outdoors at dusk", "width": 900, "height": 780 },
-    "social": { "file": "vision-advertising-social.webp", "url": "https://images.unsplash.com/photo-1778406678778-7517492f239f?fm=webp&fit=crop&crop=bottom&w=1200&h=630&q=82", "source": "https://unsplash.com/photos/times-square-buildings-with-billboards-and-crowds-below-kCFFfdJFh-A", "alt": "Illustrative outdoor advertising displays", "width": 1200, "height": 630 }
+    "hero": { "file": "vision-advertising-city-billboard-hero-artwork.png", "artwork": "hero", "alt": "Original illustration of Vision advertising billboards in an evening cityscape", "width": 1920, "height": 1000, "isPlaceholder": true },
+    "heroSmall": { "file": "vision-advertising-mobile-billboard-hero-artwork.png", "artwork": "hero-mobile", "alt": "Original illustration of an illuminated Vision billboard above city streets", "width": 960, "height": 800, "isPlaceholder": true },
+    "social": { "file": "vision-advertising-social-preview-artwork.png", "artwork": "social-preview", "alt": "Original Vision Advertising city billboard illustration", "width": 1200, "height": 630, "isPlaceholder": true }
+  },
+  "placeholders": {
+    "sudhakarRai": { "file": "sudhakar-rai-stylized-portrait-artwork.png", "artwork": "portrait", "icon": "UserRound", "alt": "Stylized placeholder portrait for Sudhakar Rai, not his actual likeness", "width": 480, "height": 600 },
+    "billboards": { "file": "billboard-hoarding-advertising-artwork.png", "artwork": "billboards", "icon": "Presentation", "alt": "Original illustration of a Vision billboard above an urban street", "width": 900, "height": 780 },
+    "digital": { "file": "digital-out-of-home-screen-artwork.png", "artwork": "digital", "icon": "RectangleHorizontal", "alt": "Original illustration of a digital advertising display in an evening streetscape", "width": 900, "height": 780 },
+    "transit": { "file": "transit-street-advertising-artwork.png", "artwork": "transit", "icon": "BusFront", "alt": "Original illustration of transit advertising on a city bus", "width": 900, "height": 780 },
+    "bus-shelters": { "file": "bus-queue-shelter-advertising-artwork.png", "artwork": "bus-shelters", "icon": "BusFront", "alt": "Original illustration of a bus shelter with an advertising panel", "width": 900, "height": 780 },
+    "pole-kiosks": { "file": "pole-kiosk-advertising-artwork.png", "artwork": "pole-kiosks", "icon": "Presentation", "alt": "Original illustration of coordinated advertising kiosks along a city road", "width": 900, "height": 780 },
+    "bus-wraps": { "file": "city-bus-wrap-advertising-artwork.png", "artwork": "bus-wraps", "icon": "BusFront", "alt": "Original illustration of a bus wrapped in Vision campaign creative", "width": 900, "height": 780 },
+    "train-branding": { "file": "train-branding-advertising-artwork.png", "artwork": "train-branding", "icon": "TrainFront", "alt": "Original illustration of a branded passenger train and outdoor billboard", "width": 900, "height": 780 },
+    "railway-advertising": { "file": "railway-station-advertising-artwork.png", "artwork": "railway-advertising", "icon": "TrainFront", "alt": "Original illustration of station advertising above a railway platform", "width": 900, "height": 780 },
+    "digital-campaigns": { "file": "digital-marketing-campaign-artwork.png", "artwork": "digital-campaigns", "icon": "Megaphone", "alt": "Original illustration of coordinated campaign creative across desktop and mobile", "width": 900, "height": 780 },
+    "seo": { "file": "search-engine-optimisation-artwork.png", "artwork": "seo", "icon": "Search", "alt": "Original illustration of search results and a magnifying glass", "width": 900, "height": 780 },
+    "google-business": { "file": "google-business-profile-artwork.png", "artwork": "google-business", "icon": "MapPin", "alt": "Original illustration of a local storefront highlighted on a neighbourhood map", "width": 900, "height": 780 },
+    "meta-ads": { "file": "meta-social-advertising-artwork.png", "artwork": "meta-ads", "icon": "Megaphone", "alt": "Original illustration of a mobile social advertisement and campaign reach", "width": 900, "height": 780 },
+    "social-management": { "file": "social-media-management-artwork.png", "artwork": "social-management", "icon": "Megaphone", "alt": "Original illustration of a social content calendar and mobile creative", "width": 900, "height": 780 },
+    "brand-launches": { "file": "brand-launch-campaign-artwork.png", "artwork": "brand-launches", "icon": "Rocket", "alt": "Original illustration of a brand launch stage and unveiling", "width": 900, "height": 780 },
+    "market-research": { "file": "market-research-insights-artwork.png", "artwork": "market-research", "icon": "Search", "alt": "Original illustration of market research charts and an insights report", "width": 900, "height": 780 }
   },
   "integrity": {
-    "outdoor-hero.webp": "3eda35b15ac7d30539e96f157bc780d55fab9103a1e68c4b7fbb479dd6558eca",
-    "outdoor-hero-small.webp": "1225c36b99558e295ade2087eafa7ed4c20e5468875950597edc743db7a9ac71",
-    "billboards.webp": "6a580c5a3408ab63827ccbc345f9ccfd2ecb7a72e34a8092e85cf4fd1e3afd0f",
-    "digital-street.webp": "91b03b8cb494d97edd2e29e6f43cda381aa84fc39609d50b14dc1bd84faeec82",
-    "transit-coach.webp": "de562c817ac466b51317f0b78a5d78e3d52ddca4ece0750f21e7eda8d86a0b16",
-    "vision-advertising-social.webp": "1dd0a7b206ae2d975be4031033fe90618a0c4cea34a3907ae5453e3430c28c30",
     "noto-devanagari-regular.ttf": "385e78e6359a9d88a0f243d53b1209d7548361ba2194e2b9ec779bcaa7e8949d",
     "noto-devanagari-bold.ttf": "19cc835a064c4af63e3c20feb54f5bf51dc25ffa52c0f493a23904572af8b26e",
     "noto-fonts-license.txt": "0dab92d0544f7b233403f14b84a663bdbfa746982eda629e7f4f9ffe1b036feb"
@@ -32,8 +39,10 @@
   },
   "icons": {
     "license": "ISC",
-    "source": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
-    "brand": "vision-mark.svg",
-    "placeholder": "image-unavailable.svg"
+    "source": "node_modules/lucide-react",
+    "brand": "vision-advertising-aperture-emblem-icon.png",
+    "previousBrand": "vision-advertising-aperture-emblem-icon.svg",
+    "placeholder": "product-image-editorial-artwork.png",
+    "placeholderArtwork": { "artwork": "product-placeholder", "width": 900, "height": 640 }
   }
 }

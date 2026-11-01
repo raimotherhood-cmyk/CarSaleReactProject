@@ -80,7 +80,7 @@ export function getBaseHeadTags() {
         { tag: "meta", attrs: { charSet: "UTF-8" } },
         { tag: "meta", attrs: { name: "viewport", content: "width=device-width, initial-scale=1.0" } },
         { tag: "meta", attrs: { name: "theme-color", content: "#202720" } },
-        { tag: "link", attrs: { rel: "icon", type: "image/svg+xml", href: `/Assets/${assets.icons.brand}` } },
+        { tag: "link", attrs: { rel: "icon", type: "image/png", href: `/Assets/${assets.icons.brand}` } },
         { tag: "link", attrs: { rel: "preconnect", href: "https://fonts.googleapis.com" } },
         { tag: "link", attrs: { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" } },
         { tag: "link", attrs: { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" } },

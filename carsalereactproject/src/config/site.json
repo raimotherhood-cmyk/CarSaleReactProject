@@ -51,15 +51,27 @@
     { "id": "launch", "title": "Brand Launch and Market Research", "icon": "Rocket", "description": "Understand your market, shape your positioning, and bring new brands and products to life with a coordinated launch." }
   ],
   "mediaFormats": [
-    { "id": "billboards", "name": "Billboards & hoardings", "category": "Outdoor", "asset": "billboards", "description": "Big ideas deserve a bigger canvas. Make your brand part of the city's everyday landscape.", "label": "Bigger than the scroll" },
-    { "id": "digital", "name": "Digital out-of-home", "category": "Digital", "asset": "digital", "description": "Bring your story to life with moving creative, timely messages, and context that matters.", "label": "Made to move" },
-    { "id": "transit", "name": "Transit & street media", "category": "Transit", "asset": "transit", "description": "Meet people on the move. Put your message along the routes that connect their day.", "label": "Go where life goes" }
+    { "id": "billboards", "name": "Billboards & hoardings", "category": "Outdoor", "icon": "Presentation", "description": "Big ideas deserve a bigger canvas. Make your brand part of the city's everyday landscape.", "label": "Bigger than the scroll" },
+    { "id": "digital", "name": "Digital out-of-home", "category": "Digital", "icon": "RectangleHorizontal", "description": "Bring your story to life with moving creative, timely messages, and context that matters.", "label": "Made to move" },
+    { "id": "transit", "name": "Transit & street media", "category": "Transit", "icon": "BusFront", "description": "Meet people on the move. Put your message along the routes that connect their day.", "label": "Go where life goes" },
+    { "id": "bus-shelters", "name": "Bus queue shelters (BQS)", "category": "Outdoor", "icon": "BusFront", "description": "Reach waiting commuters with clear, street-level messages at bus shelters.", "label": "Part of the daily journey" },
+    { "id": "pole-kiosks", "name": "Pole kiosks", "category": "Outdoor", "icon": "Presentation", "description": "Build repeated brand visibility along neighbourhood streets and busy routes.", "label": "Street-level visibility" },
+    { "id": "bus-wraps", "name": "Bus wraps", "category": "Transit", "icon": "BusFront", "description": "Turn a moving vehicle into a recognisable brand presence across the city.", "label": "Your brand on the move" },
+    { "id": "train-branding", "name": "Train branding", "category": "Railway", "icon": "TrainFront", "description": "Connect with rail passengers through branded train exteriors and interiors.", "label": "Reach beyond one station" },
+    { "id": "railway-advertising", "name": "Railway station advertising", "category": "Railway", "icon": "TrainFront", "description": "Place your message around the platforms, concourses, and station spaces people use every day.", "label": "At the centre of the commute" },
+    { "id": "digital-campaigns", "name": "Digital marketing campaigns", "category": "Digital", "icon": "Megaphone", "description": "Coordinate online campaigns around a clear audience, message, and business objective.", "label": "Connect across digital channels" },
+    { "id": "seo", "name": "Search engine optimisation (SEO)", "category": "SEO & Search", "icon": "Search", "description": "Improve how your business is discovered through relevant website content and search optimisation.", "label": "Be found when it matters" },
+    { "id": "google-business", "name": "Google Business Profile Management", "category": "SEO & Search", "icon": "MapPin", "description": "Keep your business information accurate and useful for customers searching locally on Google.", "label": "A stronger local presence" },
+    { "id": "meta-ads", "name": "Meta advertising", "category": "Social Media", "icon": "Megaphone", "description": "Reach relevant audiences with planned advertising campaigns on Facebook and Instagram.", "label": "Meet the right audience" },
+    { "id": "social-management", "name": "Social media management", "category": "Social Media", "icon": "Megaphone", "description": "Build a consistent brand presence through content planning and ongoing social communication.", "label": "Keep the conversation going" },
+    { "id": "brand-launches", "name": "Brand launches", "category": "Branding", "icon": "Rocket", "description": "Introduce your brand or product with a coordinated launch across the right channels.", "label": "Make a considered first impression" },
+    { "id": "market-research", "name": "Market research", "category": "Branding", "icon": "Search", "description": "Understand customer needs, competitors, and market opportunities before shaping your campaign.", "label": "Start with useful insight" }
   ],
   "home": {
     "hero": { "eyebrow": "OUTDOOR ROOTS. 360 DEGREE THINKING.", "action": "Plan a campaign", "explore": "Explore our media", "caption": "YOUR NEXT BIG IDEA BELONGS OUT HERE.", "channels": "OUTDOOR / DIGITAL / CREATIVE / ACTIVATIONS" },
     "introduction": { "heading": "One vision.", "accent": "Every point of connection.", "items": ["Strategy & planning", "Creative & production", "On-ground execution"] },
     "positioning": { "label": "Our focus", "eyebrow": "A BIGGER PICTURE FOR YOUR BRAND.", "description": "We help businesses build powerful brands, reach the right audience, and grow through strategic outdoor advertising, transit media, digital marketing, and creative brand solutions." },
-    "media": { "eyebrow": "01 / THE MEDIA MIX", "heading": "Find your kind of", "accent": "unmissable.", "description": "The right format turns a place into a moment.", "filterLabel": "Filter advertising formats", "all": "All media", "singular": "format", "plural": "formats", "action": "Plan this format" },
+    "media": { "eyebrow": "01 / THE MEDIA MIX", "heading": "Find your kind of", "accent": "unmissable.", "description": "Explore outdoor, digital, transit, railway, search, social media, and brand-building solutions.", "filterLabel": "Filter advertising formats", "all": "All types", "singular": "format", "plural": "formats", "action": "Plan this format", "placeholderLabel": "Concept artwork" },
     "expertise": { "eyebrow": "02 / THE FULL PICTURE", "heading": "Our expertise.", "accent": "Every angle.", "description": "From high-visibility billboards and railway advertising to digital campaigns, SEO, social media management, and brand launches, we deliver integrated marketing solutions designed to increase brand awareness and support business growth.", "action": "Let's build it" },
     "markets": { "eyebrow": "03 / THINK LOCAL. THINK BIG.", "heading": "Different cities.", "accent": "New possibilities.", "description": "From a neighbourhood launch to a multi-city story, start with the people and places that matter to your brand.", "otherLocation": "Discuss a different location", "prompt": "WHERE WILL YOUR BRAND GO NEXT?", "label": "Choose a campaign city", "selection": "YOUR NEXT CAMPAIGN", "action": "Build a brief", "availability": "Locations and media availability are confirmed during planning.", "cities": ["Mumbai", "Delhi NCR", "Bengaluru", "Hyderabad", "Chennai", "Pune"] },
     "closing": { "eyebrow": "YOUR NEXT CAMPAIGN STARTS HERE", "heading": "Let's Make Our", "accent": "Brand Visible.", "action": "Start a conversation" }
@@ -125,6 +137,8 @@
       "eyebrow": "OUR MARKETING LEADERSHIP",
       "name": "Sudhakar Rai",
       "role": "Marketing Head",
+      "portraitAsset": "sudhakarRai",
+      "portraitPlaceholderLabel": "Illustrated portrait",
       "specialisms": [
         "Brand launches & market research",
         "Business development & client acquisition",

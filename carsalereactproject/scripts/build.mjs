@@ -5,6 +5,7 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { build, loadEnv } from "vite";
 import content from "../src/config/site.json" with { type: "json" };
+import assetManifest from "../public/Assets/manifest.json" with { type: "json" };
 import { createRobots, resolveSiteUrl } from "../src/seo.js";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
@@ -55,7 +56,22 @@ try {
     await rm(serverOutput, { recursive: true, force: true });
 }
 
-await cp(join(root, "public/Assets"), join(output, "Assets"), { recursive: true });
+const assetFiles = new Set([
+    ...Object.values({ ...assetManifest.placeholders, ...assetManifest.images }).map(image => image.file),
+    ...Object.values(assetManifest.fonts || {}).map(font => font.file),
+    assetManifest.icons.brand,
+    assetManifest.icons.placeholder,
+    "manifest.json",
+    "README.md",
+    "credits.html",
+    "LUCIDE-LICENSE.txt",
+    "CANVAS-LICENSE.txt",
+]);
+await mkdir(join(output, "Assets"), { recursive: true });
+for (const filename of assetFiles) {
+    if (!/^[a-zA-Z0-9._-]+$/.test(filename)) throw new Error(`Invalid production asset filename: ${filename}`);
+    await cp(join(root, "public/Assets", filename), join(output, "Assets", filename));
+}
 await rm(join(output, "Assets/.cache.json"), { force: true });
 await rm(join(output, ".vite"), { recursive: true, force: true });
 await writeFile(join(output, "robots.txt"), createRobots(siteUrl));

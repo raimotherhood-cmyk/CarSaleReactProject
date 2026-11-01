@@ -13,6 +13,9 @@ dist-ssr
 *.local
 
 public/Assets/*.webp
+public/Assets/.artwork-cache.json
+public/Assets/CANVAS-LICENSE.txt
+public/Assets/project-*.jpg
 public/Assets/*.svg
 public/Assets/.cache.json
 public/Assets/credits.html

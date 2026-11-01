@@ -15,7 +15,11 @@ npm run dev
 
 The configured development port is 50984. Vite prints the actual address and selects another port if it is occupied.
 
-The first development start or build downloads the approved images and PDF fonts into `public/Assets`. Later runs validate and reuse the cached files. HTTPS certificate verification remains enabled; on older Node versions behind a corporate proxy, configure `NODE_EXTRA_CA_CERTS` with the trusted CA if needed.
+Development starts and builds generate original contextual artwork in `public/Assets` using the local drawing code in [scripts/artwork.mjs](scripts/artwork.mjs). Images and icons are not downloaded: illustrations are drawn locally, and interface glyphs come from the installed Lucide package. Genuine replacement photos must already exist inside the project.
+
+All 21 active artwork files, including the brand emblem, are PNGs. They are no longer excluded by Git and are physically created in the local checkout's `public/Assets` folder. Binary files generated in a local checkout are not automatically uploaded to a virtual GitHub workspace.
+
+PDF fonts are handled separately: their existing preparation step can fetch the licensed Noto files if they are not cached locally. HTTPS certificate verification remains enabled; on older Node versions behind a corporate proxy, configure `NODE_EXTRA_CA_CERTS` with the trusted CA if needed.
 
 ```sh
 npm run build
@@ -29,7 +33,7 @@ Deploy `dist` to a static host that serves `/about/index.html` and `/contact/ind
 ## Content
 
 - [src/config/site.json](src/config/site.json) is the content configuration: branding, contact details, navigation, services, page copy, form labels, budgets, and SEO descriptions.
-- [public/Assets/manifest.json](public/Assets/manifest.json) defines image filenames, responsive variants, alternative text, sources, licenses, and checksums.
+- [public/Assets/manifest.json](public/Assets/manifest.json) defines artwork scene keys or local replacement image paths, unique filenames, alternative text, the installed icon package, and PDF font records. Do not add image download URLs or CDN icon references.
 - [src/siteContent.js](src/siteContent.js) adapts those data files for React. Components contain layout and behavior rather than marketing copy.
 
 Edit the configuration and rebuild to publish changes. Keep service IDs and public route paths stable. Services are described on Home; About links to them and owns the company profile, personal message, mission, vision, and approach. Brand identification and essential navigation are intentionally shared.
@@ -64,12 +68,14 @@ npm run build
 
 `npm run lint` checks the entire repository, including legacy account and product code.
 
-The focused tests cover SEO configuration, complete email draft formatting, optional-field fallbacks, and protection against recipient/header injection.
+The focused tests cover SEO configuration, email draft formatting, recipient/header safety, project-only sources, unique asset names, and valid, distinct output for all 20 artwork scenes.
 
 ## Photography
 
-The photos are illustrative, not client portfolio images or evidence of owned inventory. Media availability must be confirmed for each campaign. Replace them with approved company photography when available.
+The website uses original, locally drawn illustrations for the hero, social preview, all 15 media types, the product placeholder, and a stylized portrait. Each scene reflects its subject rather than reusing a generic image. The portrait is explicitly illustrative, not an actual likeness of Sudhakar Rai; media scenes are concepts, not completed client campaigns.
 
-The website serves its image files locally from `Assets`, not through third-party hotlinks. The [Unsplash License](https://unsplash.com/license) permits commercial use of the configured stock photos. Sources, license terms, and SHA-256 fingerprints are recorded in the asset manifest; generated credits are linked in the footer. Lucide icons retain their ISC license notice. See [public/Assets/README.md](public/Assets/README.md).
+To replace a placeholder, add the genuine file to the project and register it in the manifest's `images` section under the same key. Genuine image entries override placeholder entries and remove their temporary labels. The portrait key is `sudhakarRai`; media keys match the format IDs. See [public/Assets/README.md](public/Assets/README.md) for an example.
 
-Copyright licensing of a photograph does not imply endorsement or clear separate rights to depicted people, trademarks, or artwork. Review those rights for the intended use of replacement imagery. User-uploaded media must also be authorized. Unused legacy images are not included in the generated website. Google Fonts remains an external font service.
+The build copies only active assets named by the manifest plus required license/credit files. Old placeholders, downloaded stock files, and unused source photos are not published. The artwork cache preserves manually replaced files, while unmodified generated images refresh when their drawing code changes. See [public/Assets/README.md](public/Assets/README.md).
+
+An image's presence in the project does not prove publication rights. The project owner must confirm the rights to project-supplied and user-uploaded images before publishing. No stock-photo license is asserted for the original project library. Google Fonts remains an external font service; the local-only image/icon rule does not change font handling.
