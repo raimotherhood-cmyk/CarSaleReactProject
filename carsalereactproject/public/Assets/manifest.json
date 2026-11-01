@@ -1,0 +1,31 @@
+{
+  "license": {
+    "name": "Unsplash License",
+    "url": "https://unsplash.com/license",
+    "verifiedOn": "2026-11-01",
+    "terms": "Commercial and non-commercial use is permitted under the Unsplash License. Do not sell unmodified copies or compile a competing image service. This license does not grant rights to depicted trademarks, people, or artworks.",
+    "notice": "These are illustrative stock photographs, not Vision Advertising client campaigns or owned media inventory."
+  },
+  "images": {
+    "hero": { "file": "outdoor-hero.webp", "url": "https://images.unsplash.com/photo-1778406678778-7517492f239f?fm=webp&fit=crop&crop=bottom&w=1920&h=1000&q=82", "source": "https://unsplash.com/photos/times-square-buildings-with-billboards-and-crowds-below-kCFFfdJFh-A", "alt": "Illustrative outdoor advertising displays in Times Square", "width": 1920, "height": 1000 },
+    "heroSmall": { "file": "outdoor-hero-small.webp", "url": "https://images.unsplash.com/photo-1778406678778-7517492f239f?fm=webp&fit=crop&crop=bottom&w=960&h=500&q=82", "source": "https://unsplash.com/photos/times-square-buildings-with-billboards-and-crowds-below-kCFFfdJFh-A", "alt": "Illustrative outdoor advertising displays in Times Square", "width": 960, "height": 500 },
+    "billboards": { "file": "billboards.webp", "url": "https://images.unsplash.com/photo-1778406678778-7517492f239f?fm=webp&fit=crop&crop=bottom&w=900&h=780&q=82", "source": "https://unsplash.com/photos/times-square-buildings-with-billboards-and-crowds-below-kCFFfdJFh-A", "alt": "Billboards and advertising displays in Times Square", "width": 900, "height": 780 },
+    "digital": { "file": "digital-street.webp", "url": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?fm=webp&fit=crop&w=900&h=780&q=82", "source": "https://images.unsplash.com/photo-1519608487953-e999c86e7455", "alt": "Illuminated signs along an urban street at night", "width": 900, "height": 780 },
+    "transit": { "file": "transit-coach.webp", "url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?fm=webp&fit=crop&w=900&h=780&q=82", "source": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957", "alt": "Coach bus parked outdoors at dusk", "width": 900, "height": 780 },
+    "social": { "file": "vision-advertising-social.webp", "url": "https://images.unsplash.com/photo-1778406678778-7517492f239f?fm=webp&fit=crop&crop=bottom&w=1200&h=630&q=82", "source": "https://unsplash.com/photos/times-square-buildings-with-billboards-and-crowds-below-kCFFfdJFh-A", "alt": "Illustrative outdoor advertising displays", "width": 1200, "height": 630 }
+  },
+  "integrity": {
+    "outdoor-hero.webp": "3eda35b15ac7d30539e96f157bc780d55fab9103a1e68c4b7fbb479dd6558eca",
+    "outdoor-hero-small.webp": "1225c36b99558e295ade2087eafa7ed4c20e5468875950597edc743db7a9ac71",
+    "billboards.webp": "6a580c5a3408ab63827ccbc345f9ccfd2ecb7a72e34a8092e85cf4fd1e3afd0f",
+    "digital-street.webp": "91b03b8cb494d97edd2e29e6f43cda381aa84fc39609d50b14dc1bd84faeec82",
+    "transit-coach.webp": "de562c817ac466b51317f0b78a5d78e3d52ddca4ece0750f21e7eda8d86a0b16",
+    "vision-advertising-social.webp": "1dd0a7b206ae2d975be4031033fe90618a0c4cea34a3907ae5453e3430c28c30"
+  },
+  "icons": {
+    "license": "ISC",
+    "source": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+    "brand": "vision-mark.svg",
+    "placeholder": "image-unavailable.svg"
+  }
+}

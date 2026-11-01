@@ -4,12 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/prepare-assets.mjs",
     "dev": "vite",
-    "build": "vite build",
+    "prebuild": "node scripts/prepare-assets.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test scripts/seo.test.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "lucide-react": "1.66.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "7.7.1",

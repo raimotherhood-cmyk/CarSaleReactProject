@@ -1,12 +1,69 @@
-# React + Vite
+# VISION ADVERTISING
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Your Brand. Our Vision. Greater Reach.
 
-Currently, two official plugins are available:
+A React 19 and Vite website for a Mumbai-based advertising and marketing company, with outdoor media browsing, eight expertise areas, company leadership, mission and vision, and a campaign-brief workflow.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Development
 
-## Expanding the ESLint configuration
+Use Node.js 22.12 or newer; Node.js 24 LTS is recommended. From this directory:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```sh
+npm ci
+npm run dev
+```
+
+The configured development port is 50984. Vite prints the actual address and selects another port if it is occupied.
+
+The first development start or build downloads the approved images into `public/Assets`. Later runs validate and reuse the cached files. HTTPS certificate verification remains enabled; on older Node versions behind a corporate proxy, configure `NODE_EXTRA_CA_CERTS` with the trusted CA if needed.
+
+```sh
+npm run build
+npm run preview
+```
+
+The build pre-renders complete HTML for Home, About, and Contact, so their content is available before JavaScript runs. It also creates private no-index pages, a 404 page, `robots.txt`, and `sitemap.xml`.
+
+Deploy `dist` to a static host that serves `/about/index.html` and `/contact/index.html` for those routes. Serve the generated `404.html` with a 404 status for unknown public URLs. Do not rewrite the pre-rendered public routes to the home page. The existing account routes still need the original backend and appropriate host routing.
+
+## Content
+
+- [src/config/site.json](src/config/site.json) is the content configuration: branding, contact details, navigation, services, page copy, form labels, budgets, and SEO descriptions.
+- [public/Assets/manifest.json](public/Assets/manifest.json) defines image filenames, responsive variants, alternative text, sources, licenses, and checksums.
+- [src/siteContent.js](src/siteContent.js) adapts those data files for React. Components contain layout and behavior rather than marketing copy.
+
+Edit the configuration and rebuild to publish changes. Keep service IDs and public route paths stable. Services are described on Home; About links to them and owns the company profile, personal message, mission, vision, and approach. Brand identification and essential navigation are intentionally shared.
+
+## Search Engines
+
+Set `VITE_SITE_URL` to the real production origin before publishing, for example `https://www.example.com` with your own domain substituted. It can also be set as `seo.siteUrl` in the content configuration. Do not include a path, query string, or fragment.
+
+Without a production origin, pages and robots are deliberately set to no-index. Once configured, the build creates clean canonical URLs, a public-page sitemap, Open Graph and Twitter metadata, and Organization, WebSite, WebPage, and breadcrumb structured data. Private and unknown routes remain no-index. Metadata updates during client-side navigation too.
+
+Page titles and descriptions are individually configurable under `seo.pages`. This supplies technical SEO foundations, not a guarantee of search rankings.
+
+## Enquiries
+
+The form validates contact and campaign details, prepares a downloadable text brief, and opens an email draft to maharastravision@gmail.com. It does not send email automatically or store form data on a server. An email application is needed to send the draft; the phone and email links also work independently of the form.
+
+The optional `VITE_ENQUIRY_EMAIL` build-time variable overrides the configured email address. See [.env.example](.env.example). Vite environment variables are public; do not put credentials in them. Without JavaScript, visitors can use the phone and email links; brief submission is disabled to avoid putting personal details into URL query strings.
+
+The original account and product routes are retained and still depend on their original backend. This redesign does not replace or secure that backend.
+
+## Checks
+
+```sh
+npm test
+npm exec -- eslint src/App.jsx src/main.jsx src/Navigation.jsx src/siteContent.js src/PageSeo.jsx src/seo.js src/entry-server.js src/Pages/Home.jsx src/Pages/About.jsx src/Pages/Contact.jsx vite.config.js
+npm run build
+```
+
+`npm run lint` checks the entire repository, including legacy account and product code.
+
+## Photography
+
+The photos are illustrative, not client portfolio images or evidence of owned inventory. Media availability must be confirmed for each campaign. Replace them with approved company photography when available.
+
+The website serves its image files locally from `Assets`, not through third-party hotlinks. The [Unsplash License](https://unsplash.com/license) permits commercial use of the configured stock photos. Sources, license terms, and SHA-256 fingerprints are recorded in the asset manifest; generated credits are linked in the footer. Lucide icons retain their ISC license notice. See [public/Assets/README.md](public/Assets/README.md).
+
+Copyright licensing of a photograph does not imply endorsement or clear separate rights to depicted people, trademarks, or artwork. Review those rights for the intended use of replacement imagery. User-uploaded media must also be authorized. Unused legacy images are not included in the generated website. Google Fonts remains an external font service.

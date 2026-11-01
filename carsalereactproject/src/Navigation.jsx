@@ -1,159 +1,102 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
-//import { useLocation } from 'react-router'
-import './index.css'
-import './Navigation.css'
-import Login from './Pages/Login.jsx'
-import Register from './Pages/Register.jsx'
+import { useState, useEffect, useRef } from "react";
+import { Routes, Route, Link, useLocation } from "react-router-dom";
+import { Aperture, ArrowUp, ArrowUpRight, LogOut, Mail, MapPin, Menu, Phone, X } from "lucide-react";
+import { brand, contactDetails, siteContent } from "./siteContent";
+import "./Navigation.css";
+import Login from "./Pages/Login.jsx";
+import Register from "./Pages/Register.jsx";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Product from "./Pages/Product";
-import ProductList from './Pages/ProductList'
-//import Layout from './Layout.jsx'
-import PrivateRoute from './Pages/PrivateRoute.jsx';
-import logo from '../src/assets/11.jpg';
-import menuicon from '../src/assets/menuicon.jpg';
-import { useIdleTimer } from 'react-idle-timer';
-import LocationTracker from './LocationTracker.jsx';
+import ProductList from "./Pages/ProductList";
+import PrivateRoute from "./Pages/PrivateRoute.jsx";
+import { useIdleTimer } from "react-idle-timer";
+
+function BrandLink({ onClick }) {
+    return <Link className="ooh-brand" to="/" aria-label={`${brand.name} ${siteContent.navigation.home}`} onClick={onClick}><span className="ooh-brand-mark"><Aperture size={28} strokeWidth={1.8} aria-hidden="true" /></span><span className="ooh-wordmark">{brand.wordmark[0]}{" "}<small>{brand.wordmark[1]}</small></span></Link>;
+}
+
 function Navigation() {
+    const { navigation, footer, notFound } = siteContent;
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [user, setUser] = useState(null);
+    const [menuOpen, setMenuOpen] = useState(false);
+    const menuButton = useRef(null);
+    const location = useLocation();
 
-    const [menuItems, setMenuItems] = useState([]);
-    useEffect(() => {
-
-        const fetchedMenuItems = [
-            { id: 1, label: 'Home', path: '/' },
-            { id: 2, label: 'About', path: '/about' },
-            { id: 3, label: 'Contact', path: '/contact' },
-            //{ id: 4, label: 'Register', path: '/register', isAuthenticated: false },
-            { id: 5, label: 'Login', path: '/login', isAuthenticated: false },
-            { id: 6, label: 'ProductList', path: '/productlist', isAuthenticated: true },
-
-        ];
-        if (isAuthenticated) {
-            const filteredItems = fetchedMenuItems.filter(item => item.isAuthenticated !== false);
-            setMenuItems(filteredItems);
-        }
-        if (!isAuthenticated) {
-            const filteredItems = fetchedMenuItems.filter(item => item.isAuthenticated !== true);
-            setMenuItems(filteredItems);
-        }
-
-    }, [user, isAuthenticated]);
-
-    // let  location = useLocation().state;
-
-
-
-    const login = (user) => {
-
+    const login = (username) => {
         setIsAuthenticated(true);
-        setUser(user);
+        setUser(username);
     };
+
     const logout = () => {
         setIsAuthenticated(false);
         setUser(null);
     };
 
-    const handleLogout = () => {
-        logout();
-
-        // navigate('/home');
-    };
-
-    ////////
-    const onIdle = () => {
-        console.log('User is idle');
-        logout();
-    };
-
-    const onActive = () => {
-        console.log('User is active');
-    };
-
-
-    const { getRemainingTime, getLastActiveTime } = useIdleTimer({
-        timeout: 1000 * 60 * 1, // 5 minutes of inactivity
-        onIdle: onIdle,
-        onActive: onActive,
-
-        debounce: 500, // Debounce onAction by 500ms
+    useIdleTimer({
+        timeout: 1000 * 60,
+        onIdle: logout,
+        debounce: 500,
     });
-    const [remainingTime, setRemainingTime] = useState(getRemainingTime());
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setRemainingTime(getRemainingTime());
-        }, 1000); // Update every second
+        if (location.hash) {
+            document.getElementById(location.hash.slice(1))?.scrollIntoView({ block: "start" });
+        } else {
+            window.scrollTo({ top: 0, behavior: "instant" });
+        }
+    }, [location.pathname, location.hash, location.key]);
 
-        return () => clearInterval(interval);
-    }, [getRemainingTime]);
-
-    const formatTime = (ms) => {
-        const totalSeconds = Math.floor(ms / 1000);
-        const minutes = Math.floor(totalSeconds / 60);
-        const seconds = totalSeconds % 60;
-        return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-    };
-    const [mobilemenu, setMobilemenu] = useState(false);
-    const toggleMenu = () => {
-        mobilemenu ? setMobilemenu(false) : setMobilemenu(true);
-
-    }
     return (
         <>
+            <a className="ooh-skip-link" href="#main-content">{navigation.skip}</a>
+            <header className="ooh-header" onKeyDown={event => {
+                if (event.key === "Escape" && menuOpen) {
+                    setMenuOpen(false);
+                    menuButton.current?.focus();
+                }
+            }}>
+                <div className="ooh-shell ooh-header-inner">
+                    <BrandLink onClick={() => setMenuOpen(false)} />
+                    <nav id="primary-navigation" className={`ooh-navigation${menuOpen ? " is-open" : ""}`} aria-label={navigation.label}>
+                        {navigation.links.map(item => <Link key={item.href} to={item.href} aria-current={location.pathname === item.href ? "page" : undefined} onClick={() => setMenuOpen(false)}>{item.label}</Link>)}
+                        {isAuthenticated && <Link to="/productlist" onClick={() => setMenuOpen(false)}>{navigation.account}</Link>}
+                        <Link className="ooh-button ooh-button-dark" to="/contact" onClick={() => setMenuOpen(false)}>{navigation.contact} <ArrowUpRight size={17} aria-hidden="true" /></Link>
+                        {user && <button className="ooh-icon-button" type="button" title={`${navigation.logout} ${user}`} aria-label={`${navigation.logout} ${user}`} onClick={logout}><LogOut size={20} aria-hidden="true" /></button>}
+                    </nav>
+                    <button className="ooh-menu-button ooh-icon-button" type="button" ref={menuButton} aria-controls="primary-navigation" aria-expanded={menuOpen} aria-label={menuOpen ? navigation.close : navigation.open} title={menuOpen ? navigation.close : navigation.open} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X size={23} aria-hidden="true" /> : <Menu size={23} aria-hidden="true" />}</button>
+                </div>
+            </header>
 
-            <div>
-
-                <nav className="container  dark-nav">
-
-                    <img src={logo} alt="" className="logoclass" ></img>
-                    <h3>Your geo location:<LocationTracker /></h3>
-
-                    {user && <h3>Welcome {user} !
-                        <button className="btn" onClick={handleLogout}>
-                            Logout {formatTime(remainingTime)}
-                        </button> </h3>}
-
-
-                    <ul className={mobilemenu ? '' : 'hide-mobile-menu'}>
-                        {menuItems.map(item => (
-                            <li key={item.id}>
-                                <Link to={item.path}>{item.label}</Link>
-                            </li>
-                        ))}
-                    </ul>
-                    <img src={menuicon} alt="" className="menu-icon" onClick={toggleMenu}></img>
-                </nav>
-
-
-
+            <main id="main-content" tabIndex={-1}>
                 <Routes>
-
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
                         <Route path="/productlist" element={<ProductList logout={logout} />} />
                         <Route path="/product/:id" element={<Product logout={logout} />} />
                     </Route>
-
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/login" element={<Login login={login} />} />
                     <Route path="/register" element={<Register />} />
-
+                    <Route path="*" element={<section className="ooh-shell ooh-not-found"><p className="ooh-eyebrow">{notFound.eyebrow}</p><h1>{notFound.heading}</h1><Link className="ooh-button ooh-button-dark" to="/">{notFound.action} <ArrowUpRight size={18} aria-hidden="true" /></Link></section>} />
                 </Routes>
+            </main>
 
-
-
-
-
-
-            </div>
+            <footer className="ooh-footer">
+                <div className="ooh-shell">
+                    <div className="ooh-footer-top">
+                        <div className="ooh-footer-brand"><BrandLink /><span className="ooh-footer-location"><MapPin size={14} aria-hidden="true" /> {contactDetails.location}</span></div>
+                        <div className="ooh-footer-links"><h2>{footer.explore}</h2>{navigation.links.map(item => <Link key={item.href} to={item.href}>{item.label}</Link>)}</div>
+                        <div className="ooh-footer-links"><h2>{footer.connect}</h2><a href={contactDetails.phoneHref}><Phone size={14} aria-hidden="true" /> {contactDetails.phone}</a><a href={`mailto:${contactDetails.email}`}><Mail size={14} aria-hidden="true" /> {contactDetails.email}</a><Link to="/contact">{footer.campaign} <ArrowUpRight size={14} aria-hidden="true" /></Link><Link to={isAuthenticated ? "/productlist" : "/login"}>{isAuthenticated ? navigation.account : navigation.login}</Link></div>
+                    </div>
+                    <div className="ooh-footer-bottom"><p>&copy; {new Date().getFullYear()} {brand.name}</p><p>{footer.notice} <a href="/Assets/credits.html">{footer.imageCredits}</a></p><button className="ooh-icon-button" type="button" aria-label={footer.backToTop} title={footer.backToTop} onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" })}><ArrowUp size={18} aria-hidden="true" /></button></div>
+                </div>
+            </footer>
         </>
     );
-};
-
+}
 
 export default Navigation;

@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 //import viteLogo from '/vite.svg';
 //import logo from '/logo.png';
 import './Product.css';
+import { placeholderImage } from '../siteContent';
 //import '../App.css'
 //import Navigation from './Navigation.jsx'
 
@@ -275,11 +276,11 @@ const Product = () => {
                             placeholder="Enter Upload File"
                             required
                         />
-                        <img src={file} />
+                        {file && <img src={file} alt="Uploaded product image" />}
                     </div>
                     <div>
                          Existing Image* 
-                        <img src={"https://yavuzceliker.github.io/sample-images/image-" + users.id + "0.jpg"} />
+                        <img src={placeholderImage} alt="No product image supplied" />
                     </div>
                     </div>
 

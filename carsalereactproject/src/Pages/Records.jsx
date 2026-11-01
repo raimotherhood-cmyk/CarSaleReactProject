@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Link, useNavigate, Outlet, Navigate } from "react-router-dom";
 import './ProductList.css';
+import { placeholderImage } from '../siteContent';
 function Records({ data }) {
     const [selectedRowId, setSelectedRowId] = useState(null);
     const navigate = useNavigate();
@@ -24,7 +25,7 @@ function Records({ data }) {
 
                     <div className="productlist" key={user.id} onClick={() => handleRowClick(user.id)}     >
                         <div className="productlistimage">
-                            <img src={"https://yavuzceliker.github.io/sample-images/image-" + user.id + "0.jpg"} alt="" />
+                            <img src={placeholderImage} alt="No product image supplied" />
                         </div>
                         <div className="productlisttext">
                             <div>{user.id}</div>

@@ -1,0 +1,157 @@
+{
+  "brand": {
+    "name": "VISION ADVERTISING",
+    "wordmark": ["VISION", "ADVERTISING"],
+    "tagline": "Your Brand. Our Vision.  Greater Reach.",
+    "theme": "360 degree Advertising & Marketing Solution Under One Roof"
+  },
+  "contact": {
+    "email": "maharastravision@gmail.com",
+    "phone": "+91 7506020948",
+    "telephone": "+917506020948",
+    "city": "Mumbai",
+    "region": "Maharashtra",
+    "country": "India",
+    "countryCode": "IN"
+  },
+  "navigation": {
+    "label": "Main navigation",
+    "skip": "Skip to content",
+    "open": "Open navigation",
+    "close": "Close navigation",
+    "home": "home",
+    "contact": "Let's talk",
+    "account": "My account",
+    "login": "Client sign in",
+    "logout": "Sign out",
+    "links": [
+      { "label": "Our media", "href": "/#media" },
+      { "label": "360 solutions", "href": "/#solutions" },
+      { "label": "Locations", "href": "/#locations" },
+      { "label": "Our approach", "href": "/about" }
+    ]
+  },
+  "footer": {
+    "explore": "Explore",
+    "connect": "Let's connect",
+    "campaign": "Plan a campaign",
+    "backToTop": "Back to top",
+    "imageCredits": "Image credits",
+    "notice": "Illustrative media, not a client portfolio. Availability is confirmed per campaign."
+  },
+  "notFound": { "eyebrow": "404 / PAGE NOT FOUND", "heading": "Let's get you back.", "action": "Back to home" },
+  "services": [
+    { "id": "outdoor", "title": "Outdoor Advertising & Transit Media", "icon": "Presentation", "description": "Connect your brand with everyday journeys through a considered mix of outdoor locations and transit media." },
+    { "id": "railway", "title": "Train Branding and Railway Advertising", "icon": "TrainFront", "description": "Take your story further with train branding, station visibility, and advertising along India's railway journeys." },
+    { "id": "hoardings", "title": "Billboards, Hoardings & BQS", "icon": "RectangleHorizontal", "description": "High-visibility billboards, hoardings, and bus queue shelters that make your brand part of the streetscape." },
+    { "id": "street", "title": "Bus Wraps, Pole Kiosks & Digital Screens", "icon": "BusFront", "description": "From moving canvases to street-level touchpoints and dynamic screens, meet your audience where life happens." },
+    { "id": "digital", "title": "Digital Marketing & SEO", "icon": "Search", "description": "Build a stronger digital presence with audience-focused campaigns and search engine optimisation." },
+    { "id": "local", "title": "Google Business Profile Management", "icon": "MapPin", "description": "Help nearby customers discover your business with accurate listings and a considered presence on Google Search and Maps." },
+    { "id": "social", "title": "Meta Ads and Social Media Management", "icon": "Megaphone", "description": "Connect through targeted Meta campaigns, thoughtful content, and consistent social media communication." },
+    { "id": "launch", "title": "Brand Launch and Market Research", "icon": "Rocket", "description": "Understand your market, shape your positioning, and bring new brands and products to life with a coordinated launch." }
+  ],
+  "mediaFormats": [
+    { "id": "billboards", "name": "Billboards & hoardings", "category": "Outdoor", "asset": "billboards", "description": "Big ideas deserve a bigger canvas. Make your brand part of the city's everyday landscape.", "label": "Bigger than the scroll" },
+    { "id": "digital", "name": "Digital out-of-home", "category": "Digital", "asset": "digital", "description": "Bring your story to life with moving creative, timely messages, and context that matters.", "label": "Made to move" },
+    { "id": "transit", "name": "Transit & street media", "category": "Transit", "asset": "transit", "description": "Meet people on the move. Put your message along the routes that connect their day.", "label": "Go where life goes" }
+  ],
+  "home": {
+    "hero": { "eyebrow": "OUTDOOR ROOTS. 360 DEGREE THINKING.", "action": "Plan a campaign", "explore": "Explore our media", "caption": "YOUR NEXT BIG IDEA BELONGS OUT HERE.", "channels": "OUTDOOR / DIGITAL / CREATIVE / ACTIVATIONS" },
+    "introduction": { "heading": "One vision.", "accent": "Every point of connection.", "items": ["Strategy & planning", "Creative & production", "On-ground execution"] },
+    "positioning": { "label": "Our focus", "eyebrow": "A BIGGER PICTURE FOR YOUR BRAND.", "description": "We help businesses build powerful brands, reach the right audience, and grow through strategic outdoor advertising, transit media, digital marketing, and creative brand solutions." },
+    "media": { "eyebrow": "01 / THE MEDIA MIX", "heading": "Find your kind of", "accent": "unmissable.", "description": "The right format turns a place into a moment.", "filterLabel": "Filter advertising formats", "all": "All media", "singular": "format", "plural": "formats", "action": "Plan this format" },
+    "expertise": { "eyebrow": "02 / THE FULL PICTURE", "heading": "Our expertise.", "accent": "Every angle.", "description": "From high-visibility billboards and railway advertising to digital campaigns, SEO, social media management, and brand launches, we deliver integrated marketing solutions designed to increase brand awareness and support business growth.", "action": "Let's build it" },
+    "markets": { "eyebrow": "03 / THINK LOCAL. THINK BIG.", "heading": "Different cities.", "accent": "New possibilities.", "description": "From a neighbourhood launch to a multi-city story, start with the people and places that matter to your brand.", "otherLocation": "Discuss a different location", "prompt": "WHERE WILL YOUR BRAND GO NEXT?", "label": "Choose a campaign city", "selection": "YOUR NEXT CAMPAIGN", "action": "Build a brief", "availability": "Locations and media availability are confirmed during planning.", "cities": ["Mumbai", "Delhi NCR", "Bengaluru", "Hyderabad", "Chennai", "Pune"] },
+    "closing": { "eyebrow": "YOUR NEXT CAMPAIGN STARTS HERE", "heading": "Let's Make Our", "accent": "Brand Visible.", "action": "Start a conversation" }
+  },
+  "enquiry": {
+    "eyebrow": "LET'S START WITH YOUR VISION",
+    "heading": "Big ambitions.",
+    "accent": "Bigger possibilities.",
+    "description": "One launch or a whole new direction. Let's bring your brand, your audience, and the right channels together.",
+    "promises": ["Audience-first strategy", "Connected creative and media", "Campaigns shaped around your goals"],
+    "formHeading": "Your campaign brief",
+    "introduction": "A little about your brand. A direction for your next big idea.",
+    "defaultService": "Integrated 360 campaign",
+    "optional": "(optional)",
+    "budgetPrompt": "Select a range",
+    "budgets": ["Not decided yet", "Under INR 1 lakh", "INR 1-5 lakh", "INR 5-10 lakh", "INR 10 lakh+"],
+    "fields": {
+      "fullName": { "label": "Full name", "placeholder": "Your name" },
+      "company": { "label": "Brand / company", "placeholder": "Your brand" },
+      "email": { "label": "Work email", "placeholder": "you@company.com" },
+      "phone": { "label": "Phone", "placeholder": "+91" },
+      "city": { "label": "City / markets", "placeholder": "e.g. Mumbai, Pune, or across India" },
+      "service": { "label": "What are you planning?" },
+      "budget": { "label": "Indicative budget" },
+      "startDate": { "label": "Preferred start" },
+      "message": { "label": "Your campaign goals", "placeholder": "The audience, the message, and what success looks like for your brand." }
+    },
+    "validation": "Please add a few words about your campaign.",
+    "consent": "I consent to sharing these details for this campaign enquiry.",
+    "prepare": "Prepare campaign brief",
+    "privacy": "Preparing a brief does not send an enquiry. Your details are not stored on a server.",
+    "noScript": "Campaign enquiries are available by phone or email when JavaScript is unavailable.",
+    "summary": { "eyebrow": "A CLEAR BRIEF. A STRONG START.", "heading": "Your brief is ready.", "description": "It has not been sent. Your next big idea is ready to share.", "brand": "Brand", "markets": "Markets", "service": "Service", "budget": "Indicative budget", "download": "Download brief", "email": "Open email draft", "edit": "Edit brief" },
+    "document": { "title": "CAMPAIGN BRIEF", "filename": "vision-advertising-campaign-brief.txt", "subject": "Campaign enquiry", "notProvided": "Not provided", "flexible": "Flexible", "consent": "Consent to share these details for this campaign enquiry: Yes" }
+  },
+  "seo": {
+    "siteUrl": "",
+    "locale": "en_IN",
+    "language": "en-IN",
+    "description": "Vision Advertising in Mumbai offers outdoor advertising, railway and transit media, SEO, social media management, and brand launches across India.",
+    "pages": [
+      { "path": "/", "name": "Home", "title": "Outdoor Advertising & Marketing in Mumbai | Vision Advertising", "description": "Reach the right audience with Mumbai-based Vision Advertising. Explore outdoor, railway, transit, digital marketing, SEO, and integrated brand campaigns." },
+      { "path": "/about", "name": "About", "title": "About Vision Advertising | Mumbai Advertising & Marketing", "description": "Meet Vision Advertising, Mumbai's integrated marketing company, and Marketing Head Sudhakar Rai. Discover our mission, vision, and audience-first approach." },
+      { "path": "/contact", "name": "Contact", "title": "Contact Vision Advertising | Plan Your Campaign in India", "description": "Discuss your next advertising campaign with Vision Advertising in Mumbai. Call +91 7506020948 or prepare a brief for outdoor, transit, and digital marketing." }
+    ],
+    "privateTitle": "Client Area | Vision Advertising",
+    "notFoundTitle": "Page Not Found | Vision Advertising"
+  },
+  "about": {
+    "eyebrow": "ABOUT VISION ADVERTISING",
+    "heading": "A clear vision.",
+    "headingAccent": "A connected brand.",
+    "paragraphs": [
+      "Vision Advertising is an advertising and marketing solutions company based in Mumbai, Maharashtra, India. We help businesses strengthen their market presence, connect with customers, and build long-term brand value.",
+      "We work with businesses across industries to identify advertising opportunities and develop campaigns aligned with their marketing objectives."
+    ],
+    "servicesLink": "Explore our advertising services",
+    "leadership": {
+      "eyebrow": "OUR MARKETING LEADERSHIP",
+      "name": "Sudhakar Rai",
+      "role": "Marketing Head",
+      "specialisms": [
+        "Brand launches & market research",
+        "Business development & client acquisition",
+        "Strategic marketing"
+      ],
+      "message": [
+        "At Vision Advertising, I focus on helping businesses identify the right advertising opportunities and develop effective marketing strategies.",
+        "With 14 years of experience in marketing and sales, my objective is to connect brands with the right audience through outdoor media, transit advertising, and digital marketing solutions.",
+        "I believe successful advertising starts with understanding the client's business, target audience, and growth objectives."
+      ],
+      "closing": "Let's work together to build stronger brands and create greater market visibility."
+    },
+    "purposeLabel": "Our mission and vision",
+    "mission": {
+      "title": "Our Mission",
+      "description": "To make advertising more strategic, accessible, and results-oriented for businesses."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To become a trusted advertising and marketing partner for brands seeking greater visibility and sustainable growth."
+    },
+    "approach": {
+      "eyebrow": "THE WAY WE THINK",
+      "heading": "Built around",
+      "headingAccent": "your ambition.",
+      "action": "Start your brief",
+      "steps": [
+        { "title": "Understand the brand.", "description": "Start with your business, your audience, and the change you want to make." },
+        { "title": "Connect the right channels.", "description": "Build a considered mix of places, platforms, and creative around your goals and budget." },
+        { "title": "Bring the vision to life.", "description": "Align creative, production, and campaign execution, with clear deliverables agreed from the start." }
+      ]
+    }
+  }
+}
