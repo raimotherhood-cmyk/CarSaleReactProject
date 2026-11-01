@@ -1,15 +1,18 @@
 :root {
     font-family: "Manrope", sans-serif;
-    color: #202720;
-    background: #fafbf8;
+    color: #172127;
+    background: #ffffff;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    --paper: #fafbf8;
-    --ink: #202720;
+    --paper: #ffffff;
+    --ink: #172127;
     --lime: #d7fa64;
-    --muted: #596152;
-    --border: #d9ded2;
+    --muted: #424f58;
+    --border: #bdc9cf;
+    --surface: #f2f6f8;
+    --accent: #115c4f;
+    --inverse: #14232b;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; letter-spacing: 0; }
@@ -21,8 +24,8 @@ button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
 button:disabled { cursor: not-allowed; }
 img { max-width: 100%; }
 ::selection { color: var(--ink); background: var(--lime); }
-:focus-visible { outline: 3px solid #387a68; outline-offset: 5px; }
-.ooh-hero :focus-visible, .ooh-footer :focus-visible { outline-color: var(--lime); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+.ooh-hero :focus-visible, .ooh-footer :focus-visible, .ooh-solutions-section :focus-visible { outline-color: var(--lime); }
 #main-content { outline: none; }
 .ooh-skip-link { position: fixed; top: -90px; left: 16px; padding: 16px 22px; z-index: 100; background: var(--lime); color: var(--ink); font-size: 14px; font-weight: 700; }
 .ooh-skip-link:focus { top: 12px; }

@@ -39,13 +39,17 @@ try {
     for (const page of content.seo.pages) {
         const directory = page.path === "/" ? output : join(output, page.path.slice(1));
         await mkdir(directory, { recursive: true });
-        await writeFile(join(directory, "index.html"), renderPage(page.path, bundles, options));
+        const html = renderPage(page.path, bundles, options);
+        await writeFile(join(directory, "index.html"), html);
+        if (page.path !== "/") await writeFile(join(output, `${page.path.slice(1)}.html`), html);
     }
     await writeFile(join(output, "404.html"), renderPage("/404", bundles, options));
     for (const pathname of ["/login", "/register"]) {
         const directory = join(output, pathname.slice(1));
         await mkdir(directory, { recursive: true });
-        await writeFile(join(directory, "index.html"), renderPage(pathname, bundles, options));
+        const html = renderPage(pathname, bundles, options);
+        await writeFile(join(directory, "index.html"), html);
+        await writeFile(join(output, `${pathname.slice(1)}.html`), html);
     }
 } finally {
     await rm(serverOutput, { recursive: true, force: true });

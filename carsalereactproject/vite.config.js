@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
                 return { html, tags: [...getBaseHeadTags(), ...seo.tags].map(tag => ({ ...tag, injectTo: 'head' })) };
             },
         }],
-        build: { manifest: true, copyPublicDir: false },
+        build: { manifest: true, copyPublicDir: false, assetsDir: 'Assets' },
         ssr: { noExternal: ['react-router', 'react-router-dom'] },
         server: { port: 50984 },
     };

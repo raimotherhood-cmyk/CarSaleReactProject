@@ -3,54 +3,54 @@
 .ooh-about-heading { display: grid; grid-template-columns: 1.15fr 1fr; gap: 65px; align-items: start; margin: 25px 0 45px; }
 .ooh-about-location { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); line-height: 1.7; margin-top: 30px; }
 .ooh-about-location svg { flex-shrink: 0; }
-.ooh-about h1 { font-size: 58px; font-weight: 500; line-height: 1.12; }
+.ooh-about h1 { font-size: 56px; font-weight: 700; line-height: 1.15; }
 .ooh-about-description p { font-size: 16px; line-height: 1.9; color: var(--muted); }
 .ooh-about-description p + p { margin-top: 18px; }
 .ooh-about-banner { position: relative; height: 390px; background: var(--ink); overflow: hidden; }
 .ooh-about-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center 45%; }
 .ooh-about-banner p { position: absolute; left: 32px; bottom: 30px; background: var(--ink); padding: 22px 30px; color: #fff; font-size: 30px; font-weight: 600; line-height: 1.3; }
 .ooh-about-banner p span { color: var(--lime); }
-.ooh-leadership { background: #f0ece9; margin-top: 65px; padding-block: 60px; }
+.ooh-leadership { background: var(--surface); border-block: 1px solid var(--border); margin-top: 50px; padding-block: 60px; }
 .ooh-leadership-inner { display: grid; grid-template-columns: 1.15fr 1fr; gap: 36px 80px; align-items: center; }
-.ooh-leadership .ooh-eyebrow { color: #665449; margin-bottom: 20px; }
-.ooh-leadership-role { font-size: 13px; font-weight: 600; margin-top: 12px; color: #8c492d; }
+.ooh-leadership .ooh-eyebrow { color: var(--accent); margin-bottom: 20px; }
+.ooh-leadership-role { font-size: 15px; font-weight: 700; margin-top: 12px; color: var(--accent); }
 .ooh-leadership-copy { font-size: 14px; line-height: 1.9; color: #62574f; margin-top: 22px; max-width: 500px; }
-.ooh-leadership-experience { border-left: 1px solid #ccbeb3; padding-left: 45px; }
+.ooh-leadership-experience { border-left: 1px solid var(--border); padding-left: 45px; }
 .ooh-leadership-experience > p { display: flex; align-items: center; gap: 22px; }
 .ooh-leadership-experience strong { font-size: 80px; line-height: 1; font-weight: 500; color: #8c492d; }
 .ooh-leadership-experience > p > span { font-size: 13px; line-height: 1.8; }
 .ooh-leadership-experience ul { list-style: none; padding: 0; margin-top: 25px; }
-.ooh-leadership-experience li { display: flex; gap: 10px; align-items: center; margin-top: 14px; font-size: 12px; line-height: 1.6; }
-.ooh-leadership-experience li svg { flex-shrink: 0; color: #8c492d; }
-.ooh-leadership-message { grid-column: 1 / -1; border-top: 1px solid #ccbeb3; padding-top: 35px; }
-.ooh-leadership-message > p { max-width: 1030px; font-size: 15px; line-height: 1.9; color: #62574f; }
+.ooh-leadership-experience li { display: flex; gap: 10px; align-items: center; margin-top: 14px; font-size: 14px; line-height: 1.7; }
+.ooh-leadership-experience li svg { flex-shrink: 0; color: var(--accent); }
+.ooh-leadership-message { grid-column: 1 / -1; border-top: 1px solid var(--border); padding-top: 35px; }
+.ooh-leadership-message > p { max-width: 1030px; font-size: 16px; line-height: 1.85; color: var(--muted); }
 .ooh-leadership-message > p + p { margin-top: 16px; }
-.ooh-leadership-message > .ooh-leadership-closing { font-family: "DM Serif Display", Georgia, serif; font-size: 25px; font-style: italic; line-height: 1.5; color: var(--ink); margin-top: 24px; }
+.ooh-leadership-message > .ooh-leadership-closing { font-family: inherit; font-size: 24px; font-weight: 700; line-height: 1.55; color: var(--ink); margin-top: 28px; padding-left: 22px; border-left: 3px solid var(--accent); }
 .ooh-leadership-message footer { margin-top: 24px; }
 .ooh-leadership-message footer strong { display: block; font-size: 13px; }
 .ooh-leadership-message footer span { display: block; font-size: 11px; color: #62574f; margin-top: 6px; }
 .ooh-purpose { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 80px; padding-block: 65px; border-bottom: 1px solid var(--border); }
-.ooh-purpose > div > svg { color: #3a6c5e; }
-.ooh-purpose > div:last-child > svg { color: #8c492d; }
+.ooh-purpose > div > svg { color: var(--accent); }
+.ooh-purpose > div:last-child > svg { color: var(--ink); }
 .ooh-about .ooh-purpose h2 { font-size: 28px; margin: 20px 0 15px; }
 .ooh-purpose p { font-size: 16px; line-height: 1.9; color: var(--muted); max-width: 500px; }
 .ooh-about-capabilities { padding-block: 80px; }
 .ooh-about-section-title .ooh-eyebrow { margin-bottom: 20px; color: var(--muted); }
-.ooh-about h2 { font-size: 38px; font-weight: 500; line-height: 1.2; }
+.ooh-about h2 { font-size: 36px; font-weight: 700; line-height: 1.2; }
 .ooh-capability-grid { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; padding: 0; margin-top: 50px; }
 .ooh-capability-grid li { border-top: 1px solid var(--border); padding-top: 25px; }
 .ooh-capability-grid li > svg { color: #45674d; }
 .ooh-capability-grid h3 { margin: 22px 0 12px; font-size: 18px; font-weight: 600; line-height: 1.4; }
 .ooh-capability-grid p { font-size: 13px; line-height: 1.8; color: var(--muted); }
-.ooh-about-approach { background: #e4efed; padding-block: 75px; }
+.ooh-about-approach { background: #edf5f8; border-top: 1px solid #b8ced8; padding-block: 75px; }
 .ooh-about-approach-inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; }
-.ooh-about-approach .ooh-eyebrow { margin-bottom: 25px; }
+.ooh-about-approach .ooh-eyebrow { margin-bottom: 25px; color: var(--accent); }
 .ooh-about-approach .ooh-button { margin-top: 30px; }
 .ooh-about-steps { list-style: none; padding: 0; }
-.ooh-about-steps li { display: flex; gap: 24px; padding: 24px 0; border-top: 1px solid #becfc9; }
-.ooh-about-steps li > span { font-size: 12px; padding-top: 5px; }
-.ooh-about-steps h3 { font-size: 20px; font-weight: 600; margin-bottom: 10px; }
-.ooh-about-steps p { font-size: 14px; line-height: 1.8; color: #526357; }
+.ooh-about-steps li { display: flex; gap: 24px; padding: 24px 0; border-top: 1px solid var(--border); }
+.ooh-about-steps li > span { font-size: 14px; font-weight: 700; color: var(--accent); min-width: 24px; padding-top: 5px; }
+.ooh-about-steps h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+.ooh-about-steps p { font-size: 15px; line-height: 1.8; color: var(--muted); }
 
 @media (max-width: 1000px) {
     .ooh-about h1 { font-size: 46px; }
@@ -62,7 +62,7 @@
     .ooh-about-intro { padding-top: 45px; }
     .ooh-about-heading { grid-template-columns: 1fr; gap: 25px; }
     .ooh-about h1 { font-size: 38px; }
-    .ooh-about-description p { font-size: 14px; }
+    .ooh-about-description p { font-size: 15px; }
     .ooh-about-banner { height: 300px; }
     .ooh-about-banner p { left: 16px; bottom: 16px; padding: 16px 20px; font-size: 24px; }
     .ooh-about h2 { font-size: 30px; }
@@ -72,9 +72,9 @@
     .ooh-about-approach-inner { grid-template-columns: 1fr; }
     .ooh-leadership { margin-top: 45px; padding-block: 45px; }
     .ooh-leadership-inner { grid-template-columns: 1fr; gap: 35px; }
-    .ooh-leadership-experience { border-left: 0; border-top: 1px solid #ccbeb3; padding: 30px 0 0; }
+    .ooh-leadership-experience { border-left: 0; border-top: 1px solid var(--border); padding: 30px 0 0; }
     .ooh-purpose { grid-template-columns: 1fr; gap: 35px; padding-block: 45px; }
-    .ooh-purpose p { font-size: 14px; }
-    .ooh-leadership-message > p { font-size: 14px; }
-    .ooh-leadership-message > .ooh-leadership-closing { font-size: 22px; }
+    .ooh-purpose p { font-size: 15px; }
+    .ooh-leadership-message > p { font-size: 15px; }
+    .ooh-leadership-message > .ooh-leadership-closing { font-size: 21px; padding-left: 16px; }
 }

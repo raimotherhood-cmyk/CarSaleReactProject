@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Routes, Route, Link, useLocation } from "react-router-dom";
+import { Routes, Route, Link, Navigate, useLocation } from "react-router-dom";
 import { Aperture, ArrowUp, ArrowUpRight, LogOut, Mail, MapPin, Menu, Phone, X } from "lucide-react";
 import { brand, contactDetails, siteContent } from "./siteContent";
 import "./Navigation.css";
@@ -72,6 +72,7 @@ function Navigation() {
 
             <main id="main-content" tabIndex={-1}>
                 <Routes>
+                    {[...siteContent.seo.pages.map(page => page.path), "/login", "/register"].flatMap(pathname => (pathname === "/" ? ["/index.html"] : [`${pathname}.html`, `${pathname}/index.html`]).map(alias => <Route key={alias} path={alias} element={<Navigate to={pathname} replace />} />))}
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}>

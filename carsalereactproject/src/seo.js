@@ -12,7 +12,7 @@ export function resolveSiteUrl(value = "") {
 }
 
 export function getPageSeo(location, options = {}) {
-    const pathname = (location.split(/[?#]/)[0].replace(/\/+$/, "") || "/").replace(/^\/index\.html$/, "/");
+    const pathname = location.split(/[?#]/)[0].replace(/\/index\.html$/, "/").replace(/\.html$/, "").replace(/\/+$/, "") || "/";
     const page = content.seo.pages.find(candidate => candidate.path === pathname);
     const origin = resolveSiteUrl(options.siteUrl ?? (import.meta.env?.VITE_SITE_URL?.trim() || content.seo.siteUrl));
     const email = (options.email ?? import.meta.env?.VITE_ENQUIRY_EMAIL ?? "").trim() || content.contact.email;

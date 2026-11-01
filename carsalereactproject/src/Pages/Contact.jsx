@@ -62,7 +62,7 @@ function CampaignForm({ initialCity, initialService }) {
                     </div>
                     <label className="ooh-consent"><input type="checkbox" name="consent" required /><span>{enquiry.consent} *</span></label>
                     <button className="ooh-button ooh-button-dark" type="submit" disabled={typeof window === "undefined"}>{enquiry.prepare} <ArrowUpRight size={18} aria-hidden="true" /></button>
-                    <noscript><p className="ooh-form-note">{enquiry.noScript}</p></noscript>
+                    {typeof window === "undefined" && <p className="ooh-form-note">{enquiry.noScript}</p>}
                     <p className="ooh-form-note">{enquiry.privacy}</p>
                 </form>
             </div>
