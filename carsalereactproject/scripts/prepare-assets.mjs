@@ -21,25 +21,31 @@ const cache = await readFile(cachePath, "utf8").then(JSON.parse).catch(error => 
 });
 const digest = buffer => createHash("sha256").update(buffer).digest("hex");
 const isWebp = buffer => buffer.length > 12 && buffer.subarray(0, 4).toString() === "RIFF" && buffer.subarray(8, 12).toString() === "WEBP";
+const isFont = buffer => buffer.length > 12 && (buffer.readUInt32BE(0) === 0x00010000 || buffer.subarray(0, 4).toString() === "OTTO");
+const downloads = [...Object.values(manifest.images), ...Object.values(manifest.fonts || {})];
 
 await mkdir(directory, { recursive: true });
-for (const image of Object.values(manifest.images)) {
-    if (!/^[a-z0-9-]+\.webp$/.test(image.file)) throw new Error(`Invalid asset filename: ${image.file}`);
+for (const image of downloads) {
+    if (!/^[a-z0-9-]+\.(webp|ttf|txt)$/.test(image.file)) throw new Error(`Invalid asset filename: ${image.file}`);
+    const photo = image.file.endsWith(".webp");
+    const font = image.file.endsWith(".ttf");
+    const validAsset = photo ? isWebp : font ? isFont : buffer => buffer.toString("utf8").includes("SIL OPEN FONT LICENSE");
     const url = new URL(image.url);
-    if (url.protocol !== "https:" || url.hostname !== "images.unsplash.com") throw new Error(`Unapproved image host: ${url.hostname}`);
+    const approved = photo ? url.hostname === "images.unsplash.com" : url.hostname === "raw.githubusercontent.com" && url.pathname.startsWith("/notofonts/noto-fonts/");
+    if (url.protocol !== "https:" || !approved) throw new Error(`Unapproved asset host: ${url.hostname}`);
     const destination = join(directory, image.file);
     const expectedDigest = manifest.integrity?.[image.file];
     const existing = await readFile(destination).catch(error => {
         if (error.code === "ENOENT") return null;
         throw error;
     });
-    if (existing && isWebp(existing) && cache[image.file]?.url === image.url && cache[image.file].sha256 === digest(existing) && (!expectedDigest || expectedDigest === cache[image.file].sha256)) continue;
+    if (existing && validAsset(existing) && cache[image.file]?.url === image.url && cache[image.file].sha256 === digest(existing) && (!expectedDigest || expectedDigest === cache[image.file].sha256)) continue;
 
-    const response = await fetch(url, { signal: AbortSignal.timeout(30000), headers: { Accept: "image/webp" } });
+    const response = await fetch(url, { signal: AbortSignal.timeout(30000), headers: { Accept: photo ? "image/webp" : "*/*" } });
     if (!response.ok) throw new Error(`Cannot prepare ${image.file}: HTTP ${response.status}. Retry later; existing assets were kept.`);
     if (Number(response.headers.get("content-length")) > 5000000) throw new Error(`Asset exceeds size limit: ${image.file}`);
     const buffer = Buffer.from(await response.arrayBuffer());
-    if (buffer.length > 5000000 || !isWebp(buffer)) throw new Error(`Invalid WebP asset: ${image.file}`);
+    if (buffer.length > 5000000 || !validAsset(buffer)) throw new Error(`Invalid asset: ${image.file}`);
     const sha256 = digest(buffer);
     if (expectedDigest && expectedDigest !== sha256) throw new Error(`Asset integrity mismatch: ${image.file}`);
     await writeFile(destination, buffer);
@@ -70,6 +76,7 @@ const credits = createElement("html", { lang: "en" },
             createElement("ul", null, ...sources.map(image => createElement("li", { key: image.source }, createElement("a", { href: image.source }, image.alt)))),
             createElement("p", null, "Photos are resized and cropped for display. Source URLs and SHA-256 fingerprints are retained with the local assets."),
             createElement("p", null, "Icons: ", createElement("a", { href: "LUCIDE-LICENSE.txt" }, "Lucide, ISC License")),
+            createElement("p", null, "PDF fonts: ", createElement("a", { href: "noto-fonts-license.txt" }, "Noto Sans Devanagari, SIL Open Font License 1.1")),
             createElement("a", { href: "/" }, site.notFound.action))));
 await writeFile(join(directory, "credits.html"), "<!doctype html>" + renderToStaticMarkup(credits));
 console.log("Local assets and license records are ready in public/Assets.");

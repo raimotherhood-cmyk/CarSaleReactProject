@@ -17,6 +17,8 @@ public/Assets/*.svg
 public/Assets/.cache.json
 public/Assets/credits.html
 public/Assets/LUCIDE-LICENSE.txt
+public/Assets/*.ttf
+public/Assets/noto-fonts-license.txt
 
 # Editor directories and files
 .vscode/*

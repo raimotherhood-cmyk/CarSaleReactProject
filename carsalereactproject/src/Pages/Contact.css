@@ -1,4 +1,4 @@
-.ooh-contact-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; padding-block: 70px 90px; align-items: start; }
+.ooh-contact-layout { display: grid; grid-template-columns: .82fr 1.18fr; gap: 64px; padding-block: 70px 90px; align-items: start; }
 .ooh-contact-intro { padding-top: 5px; }
 .ooh-contact-intro > .ooh-eyebrow { color: var(--accent); }
 .ooh-contact-intro h1 { font-size: 48px; font-weight: 700; line-height: 1.15; margin: 24px 0; }
@@ -11,10 +11,24 @@
 .ooh-contact-details svg { flex-shrink: 0; }
 .ooh-contact-details a:hover { text-decoration: underline; }
 .ooh-contact-tagline { font-family: "DM Serif Display", Georgia, serif; font-size: 21px; font-style: italic; line-height: 1.6; margin-top: 36px; }
-.ooh-contact-form-area { border-left: 1px solid var(--border); padding-left: 55px; min-width: 0; }
-.ooh-contact-form-area h2 { font-size: 26px; font-weight: 700; line-height: 1.35; }
+.ooh-contact-form-area { border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 6px; padding: 32px; min-width: 0; background: #fff; box-shadow: 0 12px 32px #14232b09; }
+.ooh-contact-form-area h2 { font-size: 24px; font-weight: 700; line-height: 1.35; }
+.ooh-brief-header { display: flex; align-items: center; gap: 14px; }
+.ooh-brief-header > div { min-width: 0; }
+.ooh-brief-header .ooh-eyebrow { font-size: 10px; color: var(--accent); margin-bottom: 5px; }
+.ooh-brief-symbol { display: grid; place-items: center; flex: 0 0 44px; height: 48px; background: var(--lime); color: var(--ink); border-radius: 4px; }
+.ooh-brief-introduction { display: flex; flex-direction: column; gap: 10px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+.ooh-brief-introduction > span { font-size: 11px; color: var(--muted); }
 .ooh-form-intro { font-size: 15px; line-height: 1.8; margin-top: 10px; color: var(--muted); }
-.ooh-contact-form { width: 100%; margin-top: 30px; padding: 0; background: transparent; border: 0; box-shadow: none; }
+.ooh-contact-form { width: 100%; margin-top: 26px; padding: 0; background: transparent; border: 0; box-shadow: none; }
+.ooh-form-section { border: 0; min-width: 0; padding: 0; margin: 0 0 28px; }
+.ooh-form-section legend { display: flex; align-items: center; gap: 10px; padding: 0; margin-bottom: 19px; font-size: 14px; font-weight: 700; line-height: 1.6; color: var(--ink); }
+.ooh-form-section legend > span { flex-shrink: 0; font-size: 11px; font-weight: 700; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
+.ooh-brief-recipient { display: flex; align-items: center; gap: 12px; background: var(--surface); border-block: 1px solid #dbe3e7; padding: 14px; margin-top: 24px; }
+.ooh-brief-recipient > svg { color: var(--accent); flex-shrink: 0; }
+.ooh-brief-recipient > div { min-width: 0; }
+.ooh-brief-recipient span { display: block; color: var(--muted); font-size: 10px; line-height: 1.7; }
+.ooh-brief-recipient strong { display: block; font-size: 12px; line-height: 1.7; overflow-wrap: anywhere; }
 .ooh-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 18px; }
 .ooh-field { min-width: 0; }
 .ooh-field-wide { grid-column: 1 / -1; }
@@ -28,6 +42,8 @@
 .ooh-consent input { flex: 0 0 18px; width: 18px; height: 18px; margin-top: 2px; accent-color: var(--accent); }
 .ooh-contact-form > .ooh-button { width: 100%; justify-content: space-between; }
 .ooh-form-note { margin-top: 14px; font-size: 12px; line-height: 1.8; color: var(--muted); }
+.ooh-privacy-note { display: flex; align-items: flex-start; gap: 9px; font-size: 11px; }
+.ooh-privacy-note > svg { flex-shrink: 0; margin-top: 3px; color: var(--accent); }
 .ooh-brief-summary { min-height: 470px; scroll-margin-top: 110px; }
 .ooh-brief-check { color: var(--accent); margin-bottom: 24px; }
 .ooh-brief-summary .ooh-eyebrow { color: var(--muted); margin-bottom: 14px; }
@@ -37,23 +53,32 @@
 .ooh-brief-summary dl > div { display: grid; grid-template-columns: 1fr 1.5fr; gap: 16px; padding-block: 17px; border-bottom: 1px solid var(--border); }
 .ooh-brief-summary dt { font-size: 12px; color: var(--muted); }
 .ooh-brief-summary dd { font-size: 13px; font-weight: 600; overflow-wrap: anywhere; }
-.ooh-brief-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.ooh-brief-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.ooh-brief-actions .ooh-button { padding-inline: 16px; gap: 12px; font-size: 13px; }
+.ooh-brief-actions .ooh-button:disabled { background: #dde5e8; color: #31434a; transform: none; }
+.ooh-pdf-spinner { flex-shrink: 0; animation: ooh-pdf-spin .9s linear infinite; }
+.ooh-pdf-error { margin-top: 16px; padding: 12px 14px; border-left: 3px solid #a13425; background: #fff1ed; color: #83251b; font-size: 13px; line-height: 1.7; }
 .ooh-edit-brief { background: transparent; border: 0; color: var(--ink); cursor: pointer; font-family: inherit; margin-top: 24px; }
+
+@keyframes ooh-pdf-spin { to { transform: rotate(360deg); } }
 
 @media (max-width: 1100px) {
     .ooh-contact-layout { gap: 40px; grid-template-columns: .8fr 1.2fr; }
-    .ooh-contact-form-area { padding-left: 35px; }
+    .ooh-contact-form-area { padding: 28px; }
     .ooh-contact-intro h1 { font-size: 40px; }
 }
 @media (max-width: 800px) {
     .ooh-contact-layout { grid-template-columns: 1fr; gap: 42px; padding-block: 45px 60px; }
     .ooh-contact-intro h1 { font-size: 39px; }
     .ooh-contact-intro > p:not(.ooh-eyebrow):not(.ooh-contact-tagline) { max-width: 520px; }
-    .ooh-contact-form-area { border-left: 0; border-top: 1px solid var(--border); padding: 35px 0 0; }
+    .ooh-contact-form-area { padding: 26px; }
     .ooh-contact-promises { margin-top: 24px; }
     .ooh-contact-tagline { margin-top: 24px; }
 }
 @media (max-width: 480px) {
+    .ooh-contact-form-area { padding: 24px 18px; }
+    .ooh-brief-actions { grid-template-columns: 1fr; }
+    .ooh-brief-header { align-items: flex-start; }
     .ooh-form-grid { grid-template-columns: 1fr; gap: 20px; }
     .ooh-contact-intro h1 { font-size: 34px; }
     .ooh-contact-form .ooh-field input, .ooh-contact-form .ooh-field select, .ooh-contact-form .ooh-field textarea { font-size: 16px; }

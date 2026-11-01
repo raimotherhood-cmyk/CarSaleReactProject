@@ -20,7 +20,15 @@
     "billboards.webp": "6a580c5a3408ab63827ccbc345f9ccfd2ecb7a72e34a8092e85cf4fd1e3afd0f",
     "digital-street.webp": "91b03b8cb494d97edd2e29e6f43cda381aa84fc39609d50b14dc1bd84faeec82",
     "transit-coach.webp": "de562c817ac466b51317f0b78a5d78e3d52ddca4ece0750f21e7eda8d86a0b16",
-    "vision-advertising-social.webp": "1dd0a7b206ae2d975be4031033fe90618a0c4cea34a3907ae5453e3430c28c30"
+    "vision-advertising-social.webp": "1dd0a7b206ae2d975be4031033fe90618a0c4cea34a3907ae5453e3430c28c30",
+    "noto-devanagari-regular.ttf": "385e78e6359a9d88a0f243d53b1209d7548361ba2194e2b9ec779bcaa7e8949d",
+    "noto-devanagari-bold.ttf": "19cc835a064c4af63e3c20feb54f5bf51dc25ffa52c0f493a23904572af8b26e",
+    "noto-fonts-license.txt": "0dab92d0544f7b233403f14b84a663bdbfa746982eda629e7f4f9ffe1b036feb"
+  },
+  "fonts": {
+    "pdfRegular": { "file": "noto-devanagari-regular.ttf", "url": "https://raw.githubusercontent.com/notofonts/noto-fonts/main/hinted/ttf/NotoSansDevanagari/NotoSansDevanagari-Regular.ttf", "source": "https://github.com/notofonts/noto-fonts", "license": "SIL Open Font License 1.1" },
+    "pdfBold": { "file": "noto-devanagari-bold.ttf", "url": "https://raw.githubusercontent.com/notofonts/noto-fonts/main/hinted/ttf/NotoSansDevanagari/NotoSansDevanagari-Bold.ttf", "source": "https://github.com/notofonts/noto-fonts", "license": "SIL Open Font License 1.1" },
+    "license": { "file": "noto-fonts-license.txt", "url": "https://raw.githubusercontent.com/notofonts/noto-fonts/main/LICENSE", "source": "https://github.com/notofonts/noto-fonts", "license": "SIL Open Font License 1.1" }
   },
   "icons": {
     "license": "ISC",

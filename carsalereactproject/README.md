@@ -15,7 +15,7 @@ npm run dev
 
 The configured development port is 50984. Vite prints the actual address and selects another port if it is occupied.
 
-The first development start or build downloads the approved images into `public/Assets`. Later runs validate and reuse the cached files. HTTPS certificate verification remains enabled; on older Node versions behind a corporate proxy, configure `NODE_EXTRA_CA_CERTS` with the trusted CA if needed.
+The first development start or build downloads the approved images and PDF fonts into `public/Assets`. Later runs validate and reuse the cached files. HTTPS certificate verification remains enabled; on older Node versions behind a corporate proxy, configure `NODE_EXTRA_CA_CERTS` with the trusted CA if needed.
 
 ```sh
 npm run build
@@ -44,7 +44,11 @@ Page titles and descriptions are individually configurable under `seo.pages`. Th
 
 ## Enquiries
 
-The form validates contact and campaign details, prepares a downloadable text brief, and opens an email draft to maharastravision@gmail.com. It does not send email automatically or store form data on a server. An email application is needed to send the draft; the phone and email links also work independently of the form.
+The form groups contact details, campaign requirements, and objectives. On valid submission it opens the visitor's default email application with a complete draft addressed to maharastravision@gmail.com. The visitor must review it and press Send. React does not have a built-in email-sending service, and the website cannot confirm delivery or send silently without a mail service/backend. No email credentials or submission backend are used.
+
+After preparing a brief, visitors can reopen the email draft, edit their details, or download a branded A4 PDF. The PDF includes all entered information, the preparation time, recipient, consent, page numbers, and an explicit unverified-delivery notice. It is created locally by a dynamically loaded `@react-pdf/renderer` module; form information is not uploaded. Long notes paginate automatically, and locally licensed Noto fonts support Devanagari alongside the standard Latin PDF font.
+
+The PDF is a separate download; `mailto:` cannot attach it automatically. A configured email application or webmail handler is required for the handoff. Browser and mail-client URL limits can affect very long or heavily encoded drafts, so the PDF provides a complete copy independent of the email application.
 
 The optional `VITE_ENQUIRY_EMAIL` build-time variable overrides the configured email address. See [.env.example](.env.example). Vite environment variables are public; do not put credentials in them. Without JavaScript, visitors can use the phone and email links; brief submission is disabled to avoid putting personal details into URL query strings.
 
@@ -54,11 +58,13 @@ The original account and product routes are retained and still depend on their o
 
 ```sh
 npm test
-npm exec -- eslint src/App.jsx src/main.jsx src/Navigation.jsx src/siteContent.js src/PageSeo.jsx src/seo.js src/entry-server.js src/Pages/Home.jsx src/Pages/About.jsx src/Pages/Contact.jsx vite.config.js
+npm exec -- eslint src/App.jsx src/main.jsx src/Navigation.jsx src/siteContent.js src/PageSeo.jsx src/seo.js src/entry-server.js src/campaignBrief.js src/CampaignBriefPdf.jsx src/Pages/Home.jsx src/Pages/About.jsx src/Pages/Contact.jsx vite.config.js
 npm run build
 ```
 
 `npm run lint` checks the entire repository, including legacy account and product code.
+
+The focused tests cover SEO configuration, complete email draft formatting, optional-field fallbacks, and protection against recipient/header injection.
 
 ## Photography
 

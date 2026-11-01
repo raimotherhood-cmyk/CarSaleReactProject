@@ -71,7 +71,11 @@
     "description": "One launch or a whole new direction. Let's bring your brand, your audience, and the right channels together.",
     "promises": ["Audience-first strategy", "Connected creative and media", "Campaigns shaped around your goals"],
     "formHeading": "Your campaign brief",
-    "introduction": "A little about your brand. A direction for your next big idea.",
+    "formEyebrow": "CAMPAIGN ENQUIRY",
+    "introduction": "A clear brief is the first step towards a focused campaign.",
+    "requiredNote": "* Required fields",
+    "sections": { "contact": "Your contact details", "campaign": "Campaign requirements", "goals": "Your objectives" },
+    "recipientLabel": "Your brief is addressed to",
     "defaultService": "Integrated 360 campaign",
     "optional": "(optional)",
     "budgetPrompt": "Select a range",
@@ -89,11 +93,11 @@
     },
     "validation": "Please add a few words about your campaign.",
     "consent": "I consent to sharing these details for this campaign enquiry.",
-    "prepare": "Prepare campaign brief",
-    "privacy": "Preparing a brief does not send an enquiry. Your details are not stored on a server.",
+    "prepare": "Continue to email",
+    "privacy": "Your email app opens with the completed brief. Review it and select Send. This website does not send email automatically or store your details on a server.",
     "noScript": "Campaign enquiries are available by phone or email when JavaScript is unavailable.",
-    "summary": { "eyebrow": "A CLEAR BRIEF. A STRONG START.", "heading": "Your brief is ready.", "description": "It has not been sent. Your next big idea is ready to share.", "brand": "Brand", "markets": "Markets", "service": "Service", "budget": "Indicative budget", "download": "Download brief", "email": "Open email draft", "edit": "Edit brief" },
-    "document": { "title": "CAMPAIGN BRIEF", "filename": "vision-advertising-campaign-brief.txt", "subject": "Campaign enquiry", "notProvided": "Not provided", "flexible": "Flexible", "consent": "Consent to share these details for this campaign enquiry: Yes" }
+    "summary": { "eyebrow": "PREPARED FOR YOUR NEXT CAMPAIGN", "heading": "Your brief is ready.", "description": "Complete the enquiry in your email app, or keep a PDF copy of your brief.", "notice": "Email delivery cannot be confirmed by this website.", "brand": "Brand", "markets": "Markets", "service": "Service", "budget": "Indicative budget", "download": "Download PDF", "downloading": "Preparing PDF...", "downloadError": "The PDF could not be prepared. Your brief is still available. Please try again.", "email": "Open email app", "edit": "Edit brief", "delivery": "Email handoff", "file": "A4 PDF document" },
+    "document": { "title": "CAMPAIGN BRIEF", "filename": "vision-advertising-campaign-brief.pdf", "subject": "Campaign enquiry", "prepared": "Prepared on", "recipient": "Prepared for", "details": "Contact & campaign details", "objectives": "Campaign objectives", "status": "Prepared locally. Email delivery has not been verified.", "page": "Page", "notProvided": "Not provided", "flexible": "Flexible", "consent": "Consent to share these details for this campaign enquiry: Yes" }
   },
   "seo": {
     "siteUrl": "",
